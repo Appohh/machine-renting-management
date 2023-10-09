@@ -1,4 +1,4 @@
 package rent.tycoon.business.interfaces;
 
-public class test {
+public interface RentRepository {
 }
