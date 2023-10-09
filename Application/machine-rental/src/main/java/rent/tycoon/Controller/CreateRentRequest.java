@@ -1,18 +1,20 @@
-package rent.tycoon.domain;
+package rent.tycoon.Controller;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
-@AllArgsConstructor
-@Getter
+
+
+@Data
 @Builder
 @NoArgsConstructor
-public class Rent {
-    private int id;
+@AllArgsConstructor
+public class CreateRentRequest {
+
     private int productId;
     private int customerId;
     private Date start;
