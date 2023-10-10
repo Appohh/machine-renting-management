@@ -14,7 +14,6 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateRentRequest {
-
     private int productId;
     private int customerId;
     private Date start;

@@ -1,9 +1,6 @@
 package rent.tycoon.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,6 +9,7 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 public class Rent {
+    @Setter
     private int id;
     private int productId;
     private int customerId;
