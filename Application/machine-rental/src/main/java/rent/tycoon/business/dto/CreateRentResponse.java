@@ -1,4 +1,4 @@
-package rent.tycoon.Controller;
+package rent.tycoon.business.dto;
 
 
 import lombok.AllArgsConstructor;
@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateRentResponse {
-    private Long Id;
+    private int id;
 }

@@ -2,6 +2,7 @@ package rent.tycoon.persistence.Impl;
 
 import io.micrometer.observation.annotation.Observed;
 import org.springframework.stereotype.Repository;
+import rent.tycoon.business.dto.CreateRentRequest;
 import rent.tycoon.business.interfaces.RentRepository;
 import rent.tycoon.domain.Rent;
 
@@ -21,12 +22,12 @@ public class RentRepositoryImpl implements RentRepository {
     }
 
 
-    @Observed
-    public Rent saveRent(Rent createRent){
-        createRent.setId(NEXT_ID);
+    @Override
+    public Rent saveRent(Rent rent){
+        rent.setId(NEXT_ID);
         setNextId(NEXT_ID);
-        this.savedRent.add(createRent);
-        return createRent;
+        this.savedRent.add(rent);
+        return rent;
     }
 
     public void setNextId(int id) {

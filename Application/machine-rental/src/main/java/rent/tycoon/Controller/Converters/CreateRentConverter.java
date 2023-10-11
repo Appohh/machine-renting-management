@@ -1,15 +1,13 @@
 package rent.tycoon.Controller.Converters;
 
 import org.springframework.stereotype.Component;
-import rent.tycoon.Controller.CreateRentRequest;
-import rent.tycoon.Controller.CreateRentResponse;
-import rent.tycoon.domain.Rent;
-import rent.tycoon.domain.dto.CreateRent;
+import rent.tycoon.business.dto.CreateRentRequest;
+import rent.tycoon.business.dto.CreateRentResponse;
 @Component
 public class CreateRentConverter {
 
-    public static CreateRent toCreateRent(CreateRentRequest request){
-        return CreateRent.builder()
+    public static CreateRentRequest toCreateRent(CreateRentRequest request){
+        return CreateRentRequest.builder()
                 .productId(request.getProductId())
                 .customerId(request.getCustomerId())
                 .start(request.getStart())
@@ -23,10 +21,9 @@ public class CreateRentConverter {
                 .build();
     }
 
-    public static CreateRentResponse responseConverter(CreateRent createRent){
-        CreateRentResponse response = new CreateRentResponse();
-        response.setId(response.getId());
-        return response;
+    public static CreateRentResponse responseConverter(CreateRentRequest createRent){
+        return CreateRentResponse.builder()
+                .build();
     }
 
 }

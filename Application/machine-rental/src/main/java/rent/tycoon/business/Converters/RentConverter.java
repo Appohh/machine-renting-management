@@ -1,11 +1,12 @@
 package rent.tycoon.business.Converters;
 
+import rent.tycoon.business.dto.CreateRentRequest;
+import rent.tycoon.business.dto.CreateRentResponse;
 import rent.tycoon.domain.Rent;
-import rent.tycoon.domain.dto.CreateRent;
 
 public class RentConverter {
-    public static Rent toRent(CreateRent createRent) {
-        Rent rent = Rent.builder()
+    public static Rent toRent(CreateRentRequest createRent) {
+        return Rent.builder()
                 .productId(createRent.getProductId())
                 .customerId(createRent.getCustomerId())
                 .start(createRent.getStart())
@@ -17,6 +18,11 @@ public class RentConverter {
                 .city(createRent.getCity())
                 .timestamp(createRent.getTimestamp())
                 .build();
-        return rent;
+    }
+
+    public static CreateRentResponse toResponse(Rent rent){
+        return CreateRentResponse.builder()
+                .id(rent.getId())
+                .build();
     }
 }

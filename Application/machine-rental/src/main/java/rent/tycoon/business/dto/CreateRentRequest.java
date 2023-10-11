@@ -1,4 +1,4 @@
-package rent.tycoon.Controller;
+package rent.tycoon.business.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
