@@ -4,12 +4,12 @@ import org.springframework.stereotype.Component;
 import rent.tycoon.Controller.CreateRentRequest;
 import rent.tycoon.Controller.CreateRentResponse;
 import rent.tycoon.domain.Rent;
-import rent.tycoon.domain.dto.CreateRent;
+import rent.tycoon.domain.dto.CreateRentDTO;
 @Component
 public class CreateRentConverter {
 
-    public static CreateRent toCreateRent(CreateRentRequest request){
-        return CreateRent.builder()
+    public static CreateRentDTO toCreateRent(CreateRentRequest request){
+        return CreateRentDTO.builder()
                 .productId(request.getProductId())
                 .customerId(request.getCustomerId())
                 .start(request.getStart())
@@ -23,7 +23,7 @@ public class CreateRentConverter {
                 .build();
     }
 
-    public static CreateRentResponse responseConverter(CreateRent createRent){
+    public static CreateRentResponse responseConverter(Rent rent){
         CreateRentResponse response = new CreateRentResponse();
         response.setId(response.getId());
         return response;

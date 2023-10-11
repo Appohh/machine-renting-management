@@ -6,13 +6,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import rent.tycoon.Controller.Converters.CreateRentConverter;
-import rent.tycoon.business.Converters.RentConverter;
 import rent.tycoon.business.servicesImpl.RentService;
-import rent.tycoon.domain.dto.CreateRent;
-
-import java.util.List;
+import rent.tycoon.domain.Rent;
+import rent.tycoon.domain.dto.CreateRentDTO;
 
 @RestController
 @RequestMapping("/rent")
@@ -23,8 +20,8 @@ public class RentController {
 
     @PostMapping
     public ResponseEntity<CreateRentResponse> createPost(@Valid CreateRentRequest request) {
-        CreateRent createRent = CreateRentConverter.toCreateRent(request);
-        CreateRent createdRent = rentService.createRent(createRent);
+        CreateRentDTO createRentDTO = CreateRentConverter.toCreateRent(request);
+        Rent createdRent = rentService.createRent(createRentDTO);
 
         CreateRentResponse response = CreateRentConverter.responseConverter(createdRent);
 
