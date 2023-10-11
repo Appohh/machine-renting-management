@@ -10,6 +10,7 @@ import rent.tycoon.business.dto.CreateRentRequest;
 import rent.tycoon.business.dto.CreateRentResponse;
 import rent.tycoon.business.servicesImpl.RentService;
 
+
 @RestController
 @RequestMapping("/rent")
 @AllArgsConstructor

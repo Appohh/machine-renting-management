@@ -3,10 +3,11 @@ package rent.tycoon.Controller.Converters;
 import org.springframework.stereotype.Component;
 import rent.tycoon.business.dto.CreateRentRequest;
 import rent.tycoon.business.dto.CreateRentResponse;
+
 @Component
 public class CreateRentConverter {
 
-    public static CreateRentRequest toCreateRent(CreateRentRequest request){
+    public static CreateRentRequest toCreateRentRequest(CreateRentRequest request){
         return CreateRentRequest.builder()
                 .productId(request.getProductId())
                 .customerId(request.getCustomerId())
