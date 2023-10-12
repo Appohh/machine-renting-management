@@ -14,7 +14,7 @@ import rent.tycoon.business.servicesImpl.RentService;
 @RestController
 @RequestMapping("/rent")
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:")
+@CrossOrigin(origins = "http://localhost:5173")
 public class RentController {
     private final RentService rentService;
 

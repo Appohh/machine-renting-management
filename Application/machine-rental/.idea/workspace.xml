@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff5057a-7851-4c32-8abd-83f1557d5eaa" name="Changes" comment="" />
+    <list default="true" id="6ff5057a-7851-4c32-8abd-83f1557d5eaa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/pages/AddRent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/pages/AddRent.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +46,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -79,7 +85,7 @@
       <workItem from="1695975593446" duration="34000" />
       <workItem from="1697044437824" duration="665000" />
       <workItem from="1697045116593" duration="222000" />
-      <workItem from="1697116886742" duration="1696000" />
+      <workItem from="1697116886742" duration="3548000" />
     </task>
     <servers />
   </component>
