@@ -16,7 +16,6 @@ public class RentConverter {
                 .discount(request.getDiscount())
                 .address(request.getAddress())
                 .city(request.getCity())
-                .timestamp(request.getTimestamp())
                 .build();
     }
 

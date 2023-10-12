@@ -17,7 +17,7 @@ public class CreateRentConverter {
                 .discount(request.getDiscount())
                 .address(request.getAddress())
                 .city(request.getCity())
-                .timestamp(request.getTimestamp())
+//                .timestamp(request.getTimestamp())
                 .total(request.getTotal())
                 .build();
     }

@@ -19,7 +19,6 @@ public class CreateRentRequest {
     private Date end;
     private String address;
     private String city;
-    private Date timestamp;
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
