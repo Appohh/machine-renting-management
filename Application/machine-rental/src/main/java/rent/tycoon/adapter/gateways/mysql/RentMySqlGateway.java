@@ -2,6 +2,7 @@ package rent.tycoon.adapter.gateways.mysql;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import rent.tycoon.adapter.gateways.mapper.RentJpaMapper;
 import rent.tycoon.adapter.repositories.IRentRepository;
 import rent.tycoon.business.boundaries.output.register.IRentRegisterGateway;
 import rent.tycoon.domain.IRent;
@@ -16,13 +17,23 @@ public class RentMySqlGateway implements IRentRegisterGateway {
     public RentMySqlGateway(IRentRepository repository) {this.repository = repository;}
 
     public long save(IRent rent){
-        // TODO document why this method is empty
-        return 1;
+        RentJpaMapper rentJpaMapper = RentJpaMapper.builder()
+                .productId(rent.getProductId())
+                .customerId(rent.getCustomerId())
+                .start(rent.getStart())
+                .end(rent.getEnd())
+                .address(rent.getAddress())
+                .city(rent.getCity())
+                .timestamp(rent.getTimestamp())
+                .total(rent.getTotal())
+                .discount(rent.getDiscount())
+                .paid(rent.getPaid())
+                .build();
+        return repository.save(rentJpaMapper).getId();
     }
 
     @Override
-    public boolean existsByProductId(int productId){
-        // TODO document why this method is empty
-        return true;
+    public boolean existsByProductId(long productId){
+        return repository.existsByProductId(productId);
     }
 }

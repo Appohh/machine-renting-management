@@ -6,4 +6,5 @@ import rent.tycoon.adapter.gateways.mapper.RentJpaMapper;
 
 @Repository
 public interface IRentRepository extends JpaRepository<RentJpaMapper, String> {
+    boolean existsByProductId (long productId);
 }

@@ -3,6 +3,8 @@ package rent.tycoon.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import java.math.BigDecimal;
+import java.util.List;
+
 @AllArgsConstructor
 @Getter
 public class Machine implements IProduct {
@@ -11,6 +13,7 @@ public class Machine implements IProduct {
     private String description;
     private int status;
     private BigDecimal price;
+    private List <Files> files;
 
 
     @Override
@@ -24,14 +27,14 @@ public class Machine implements IProduct {
     }
 
     @Override
-    public String getDescription(){
-        return description;
-    }
+    public String getDescription(){return description;}
     @Override
     public int getStatus(){
         return status;
     }
     @Override
     public BigDecimal getPrice(){return price;}
+    @Override
+    public List<Files> getFileUrl(){return files;}
 }
 

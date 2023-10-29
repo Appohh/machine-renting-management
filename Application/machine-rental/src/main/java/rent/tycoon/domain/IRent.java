@@ -4,16 +4,15 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public interface IRent {
-     long id();
-     int productId();
-     int customerId();
-     Date start();
-     Date end();
-     String address();
-     String city();
-     Date timestamp();
-     BigDecimal total();
-     BigDecimal discount();
-     int paid();
-     Image image();
+     long getId();
+     long getProductId();
+     long getCustomerId();
+     Date getStart();
+     Date getEnd();
+     String getAddress();
+     String getCity();
+     Date getTimestamp();
+     BigDecimal getTotal();
+     BigDecimal getDiscount();
+     int getPaid();
 }

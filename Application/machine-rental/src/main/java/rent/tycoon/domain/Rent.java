@@ -10,8 +10,9 @@ import java.util.Date;
 @NoArgsConstructor
 public class Rent implements IRent {
     private long id;
-    private int productId;
-    private int customerId;
+    //Hier nog een list van maken. Maakt mogelijk dat een user meerdere producten kan renten tegelijkertijd
+    private long productId;
+    private long customerId;
     private Date start;
     private Date end;
     private String address;
@@ -20,56 +21,50 @@ public class Rent implements IRent {
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
-    private Image image;
 
     @Override
-    public long id(){
+    public long getId(){
         return id;
     }
     @Override
-    public int productId(){
-        return productId;
-    }
+    public long getProductId(){return productId;}
     @Override
-    public int customerId(){
+    public long getCustomerId(){
         return customerId;
     }
     @Override
-    public Date start(){
+    public Date getStart(){
         return start;
     }
     @Override
-    public Date end(){
+    public Date getEnd(){
         return end;
     }
     @Override
-    public String address(){
+    public String getAddress(){
         return address;
     }
     @Override
-    public String city(){
+    public String getCity(){
         return city;
     }
     @Override
-    public Date timestamp(){
+    public Date getTimestamp(){
         return timestamp;
     }
     @Override
-    public BigDecimal total(){
+    public BigDecimal getTotal(){
         return total;
     }
     @Override
-    public BigDecimal discount(){
+    public BigDecimal getDiscount(){
         return discount;
     }
     @Override
-    public int paid(){
+    public int getPaid(){
         return paid;
     }
-    @Override
-    public Image image(){
-        return image;
-    }
+
 
 
 }

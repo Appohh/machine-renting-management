@@ -9,7 +9,6 @@ import rent.tycoon.business.model.request.CreateRentRequestModel;
 import rent.tycoon.business.model.response.CreateRentResponseModel;
 import rent.tycoon.business.presenter.IRentPresenter;
 import rent.tycoon.domain.IRent;
-import rent.tycoon.domain.Image;
 import rent.tycoon.domain.factory.IRentFactory;
 
 import java.util.Date;
@@ -27,18 +26,12 @@ public class RentService implements IRentRegisterBoundary {
             return presenter.prepareFailView(new RentCustomException("Rent with the productId" + requestModel.getProductId() + " Already in database"));
         }
 
-        Image image = Image.builder()
-                .fileUrl(requestModel.getImage().getOriginalFilename())
-                .type(requestModel.getImage().getContentType())
-                .build();
-
-        IRent rent = factory.create(0, requestModel.getProductId(), requestModel.getCustomerId(), requestModel.getStart(), requestModel.getEnd(), requestModel.getAddress(), requestModel.getCity(), new Date(), requestModel.getTotal(), requestModel.getDiscount(), 0, image);
+        IRent rent = factory.create(0, requestModel.getProductId(), requestModel.getCustomerId(), requestModel.getStart(), requestModel.getEnd(), requestModel.getAddress(), requestModel.getCity(), new Date(), requestModel.getTotal(), requestModel.getDiscount(), 0);
 
         long id = gateway.save(rent);
 
         CreateRentResponseModel responseModel = new CreateRentResponseModel(id);
 
         return presenter.prepareSuccessView(responseModel);
-
     }
 }
