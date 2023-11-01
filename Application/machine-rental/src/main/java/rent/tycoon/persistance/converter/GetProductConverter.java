@@ -1,10 +1,10 @@
 package rent.tycoon.persistance.converter;
 
 
-import rent.tycoon.persistance.gateways.mapper.AccessoryJpaMapper;
-import rent.tycoon.persistance.gateways.mapper.FilesJpaMapper;
-import rent.tycoon.persistance.gateways.mapper.MachineJpaMapper;
-import rent.tycoon.persistance.gateways.mapper.ProductJpaMapper;
+import rent.tycoon.persistance.databases.entity.AccessoryJpaMapper;
+import rent.tycoon.persistance.databases.entity.FilesJpaMapper;
+import rent.tycoon.persistance.databases.entity.MachineJpaMapper;
+import rent.tycoon.persistance.databases.entity.ProductJpaMapper;
 import rent.tycoon.domain.Files;
 import rent.tycoon.domain.IProduct;
 import rent.tycoon.domain.factory.IProductFactory;

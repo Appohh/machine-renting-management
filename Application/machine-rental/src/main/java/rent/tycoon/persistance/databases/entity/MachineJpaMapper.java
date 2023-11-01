@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.gateways.mapper;
+package rent.tycoon.persistance.databases.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

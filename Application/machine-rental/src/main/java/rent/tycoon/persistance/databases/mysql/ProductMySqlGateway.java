@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.gateways.mysql;
+package rent.tycoon.persistance.databases.mysql;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -6,11 +6,12 @@ import org.springframework.transaction.annotation.Transactional;
 import rent.tycoon.persistance.converter.CreateProductConverter;
 import rent.tycoon.persistance.converter.GetProductConverter;
 import rent.tycoon.persistance.converter.UpdateProductConverter;
-import rent.tycoon.persistance.gateways.mapper.FilesJpaMapper;
-import rent.tycoon.persistance.gateways.mapper.ProductJpaMapper;
+import rent.tycoon.persistance.databases.entity.FilesJpaMapper;
+import rent.tycoon.persistance.databases.entity.ProductJpaMapper;
 import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
 import rent.tycoon.domain.IProduct;
 import rent.tycoon.domain.factory.IProductFactory;
+import rent.tycoon.persistance.repositories.IProductRepository;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ import static rent.tycoon.persistance.converter.CreateProductConverter.mapFiles;
 
 @Repository
 public class ProductMySqlGateway implements IProductRepo {
-    private final rent.tycoon.persistance.repositories.IProductRepository repository;
+    private final IProductRepository repository;
     private final IProductFactory factory;
 
     @Autowired
