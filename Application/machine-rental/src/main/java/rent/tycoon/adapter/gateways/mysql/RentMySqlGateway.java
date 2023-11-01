@@ -4,19 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import rent.tycoon.adapter.gateways.mapper.RentJpaMapper;
 import rent.tycoon.adapter.repositories.IRentRepository;
-import rent.tycoon.business.boundaries.output.register.IRentRegisterGateway;
-import rent.tycoon.domain.IRent;
-
+import rent.tycoon.business.boundaries.output.IRentGateway;
+import rent.tycoon.domain.Rent;
 
 
 @Repository
-public class RentMySqlGateway implements IRentRegisterGateway {
+public class RentMySqlGateway implements IRentGateway {
     private final IRentRepository repository;
 
     @Autowired
     public RentMySqlGateway(IRentRepository repository) {this.repository = repository;}
 
-    public long save(IRent rent){
+    public long save(Rent rent){
         RentJpaMapper rentJpaMapper = RentJpaMapper.builder()
                 .productId(rent.getProductId())
                 .customerId(rent.getCustomerId())

@@ -12,17 +12,19 @@ import java.util.List;
 @Entity
 @Table(name = "product")
 @Getter
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Inheritance(strategy = InheritanceType.JOINED)
 public class ProductJpaMapper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String name;
     private String description;
     private int status;
     private BigDecimal price;
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FilesJpaMapper> files;
+    private String type;
 }

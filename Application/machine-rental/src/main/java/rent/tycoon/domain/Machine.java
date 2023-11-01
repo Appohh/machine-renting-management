@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @AllArgsConstructor
-@Getter
 public class Machine implements IProduct {
     private long id;
     private String name;
@@ -14,6 +13,9 @@ public class Machine implements IProduct {
     private int status;
     private BigDecimal price;
     private List <Files> files;
+    private String type;
+    @Getter
+    private String machineSpecificField;
 
 
     @Override
@@ -36,5 +38,7 @@ public class Machine implements IProduct {
     public BigDecimal getPrice(){return price;}
     @Override
     public List<Files> getFileUrl(){return files;}
+    @Override
+    public String getType(){return type;}
 }
 

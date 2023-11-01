@@ -1,6 +1,7 @@
 package rent.tycoon.domain;
 
 
+
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -11,5 +12,5 @@ public interface IProduct {
     int getStatus();
     BigDecimal getPrice();
     List<Files> getFileUrl();
-
+    String getType();
 }

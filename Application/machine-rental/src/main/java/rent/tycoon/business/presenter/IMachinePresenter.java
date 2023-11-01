@@ -1,12 +1,17 @@
 package rent.tycoon.business.presenter;
 
 import rent.tycoon.business.exeption.ProductCustomException;
-import rent.tycoon.business.model.response.CreateMachineResponseModel;
+import rent.tycoon.business.model.response.CreateProductResponseModel;
+import rent.tycoon.business.model.response.GetProductResponseModel;
 
 public interface IMachinePresenter {
-    CreateMachineResponseModel prepareFailView (ProductCustomException e) throws ProductCustomException;
+    CreateProductResponseModel prepareFailView (ProductCustomException e) throws ProductCustomException;
 
-    CreateMachineResponseModel prepareSuccessView(CreateMachineResponseModel responseModel);
+    CreateProductResponseModel prepareSuccessView(CreateProductResponseModel responseModel);
+
+    GetProductResponseModel prepareGetFailView (ProductCustomException e) throws ProductCustomException;
+
+    GetProductResponseModel prepareGetSuccessView(GetProductResponseModel responseModel);
 
 
 }
