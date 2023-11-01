@@ -6,12 +6,15 @@ import org.springframework.web.multipart.MultipartFile;
 import rent.tycoon.business.boundaries.input.IProductBoundary;
 import rent.tycoon.business.boundaries.output.IProductRegisterGateway;
 import rent.tycoon.business.exeption.ProductCustomException;
-import rent.tycoon.business.model.request.create.CreateAccessoryRequestModel;
-import rent.tycoon.business.model.request.create.CreateMachineRequestModel;
-import rent.tycoon.business.model.request.GetProductRequestModel;
-import rent.tycoon.business.model.request.create.CreateProductRequestModel;
+import rent.tycoon.business.model.request.accessory.UpdateAccessoryRequestModel;
+import rent.tycoon.business.model.request.machine.UpdateMachineRequestModel;
+import rent.tycoon.business.model.request.product.UpdateProductRequestModel;
+import rent.tycoon.business.model.request.accessory.CreateAccessoryRequestModel;
+import rent.tycoon.business.model.request.machine.CreateMachineRequestModel;
+import rent.tycoon.business.model.request.product.CreateProductRequestModel;
 import rent.tycoon.business.model.response.CreateProductResponseModel;
 import rent.tycoon.business.model.response.GetProductResponseModel;
+import rent.tycoon.business.model.response.UpdateProductResponseModel;
 import rent.tycoon.business.presenter.IMachinePresenter;
 import rent.tycoon.domain.Files;
 import rent.tycoon.domain.IProduct;
@@ -81,6 +84,43 @@ public class ProductService implements IProductBoundary {
         GetProductResponseModel responseModel = new GetProductResponseModel(iProducts);
         return presenter.prepareGetSuccessView(responseModel);
     }
+
+    @Override
+    public UpdateProductResponseModel update(UpdateProductRequestModel requestModel) throws ProductCustomException {
+        // Verificar si el producto con el ID proporcionado existe
+        if (!gateway.existsById(String.valueOf(requestModel.getId()))) {
+            throw new ProductCustomException("Product with ID " + requestModel.getId() + " does not exist in the database");
+        }
+
+        // Mapear los archivos desde el requestModel a la lista de Files
+        List<Files> files = requestModel.getFiles().stream()
+                .map(file -> Files.builder()
+                        .fileUrl(file.getOriginalFilename())
+                        .type(file.getContentType())
+                        .build())
+                .collect(Collectors.toList());
+
+        IProduct updatedProduct;
+
+        if (Objects.equals(requestModel.getType(), "machine")) {
+            UpdateMachineRequestModel machineRequestModel = (UpdateMachineRequestModel) requestModel;
+            updatedProduct = factory.createMachine(requestModel.getId(), requestModel.getName(), requestModel.getDescription(), requestModel.getStatus(), requestModel.getPrice(), files, requestModel.getType(), machineRequestModel.getMachineSpecificField());
+        } else if (Objects.equals(requestModel.getType(), "accessory")) {
+            UpdateAccessoryRequestModel accessoryRequestModel = (UpdateAccessoryRequestModel) requestModel;
+            updatedProduct = factory.createAccessory(requestModel.getId(), requestModel.getName(), requestModel.getDescription(), requestModel.getStatus(), requestModel.getPrice(), files, requestModel.getType(), accessoryRequestModel.getAccessorySpecificField());
+        } else {
+            throw new ProductCustomException("Invalid product type: " + requestModel.getType());
+        }
+
+        // Actualizar el producto en el gateway
+        IProduct product = gateway.update(updatedProduct);
+
+        // Puedes agregar lógica adicional aquí, como manejar la actualización de archivos si es necesario
+
+        return new UpdateProductResponseModel(product);
+    }
+
+
 
 
 }

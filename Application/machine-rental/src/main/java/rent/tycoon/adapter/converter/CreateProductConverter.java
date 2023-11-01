@@ -46,7 +46,12 @@ public class CreateProductConverter {
         }
     }
 
-    private static List<FilesJpaMapper> mapFiles(List<Files> fileUrl) {
+
+
+
+        
+
+    public static List<FilesJpaMapper> mapFiles(List<Files> fileUrl) {
         List<FilesJpaMapper> filesJpaMapper = new ArrayList<>();
         if (fileUrl != null) {
             for (Files file : fileUrl) {

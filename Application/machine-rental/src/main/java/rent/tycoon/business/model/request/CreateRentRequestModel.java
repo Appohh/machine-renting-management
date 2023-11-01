@@ -1,4 +1,4 @@
-package rent.tycoon.business.model.request.create;
+package rent.tycoon.business.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

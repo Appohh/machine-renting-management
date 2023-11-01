@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import rent.tycoon.business.boundaries.input.IRentBoundary;
 import rent.tycoon.business.boundaries.output.IRentGateway;
 import rent.tycoon.business.exeption.RentCustomException;
-import rent.tycoon.business.model.request.create.CreateRentRequestModel;
+import rent.tycoon.business.model.request.CreateRentRequestModel;
 import rent.tycoon.business.model.response.CreateRentResponseModel;
 import rent.tycoon.business.presenter.IRentPresenter;
 import rent.tycoon.domain.Rent;

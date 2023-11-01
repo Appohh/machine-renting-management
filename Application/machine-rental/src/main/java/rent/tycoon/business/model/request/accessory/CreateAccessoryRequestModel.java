@@ -1,9 +1,10 @@
-package rent.tycoon.business.model.request.create;
+package rent.tycoon.business.model.request.accessory;
 
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
+import rent.tycoon.business.model.request.product.CreateProductRequestModel;
 
 import java.math.BigDecimal;
 import java.util.List;

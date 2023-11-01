@@ -1,13 +1,18 @@
 package rent.tycoon.adapter.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import rent.tycoon.business.boundaries.input.IProductBoundary;
 import rent.tycoon.business.exeption.ProductCustomException;
-import rent.tycoon.business.model.request.create.CreateAccessoryRequestModel;
-import rent.tycoon.business.model.request.create.CreateMachineRequestModel;
+import rent.tycoon.business.model.request.accessory.CreateAccessoryRequestModel;
+import rent.tycoon.business.model.request.machine.CreateMachineRequestModel;
+import rent.tycoon.business.model.request.machine.UpdateMachineRequestModel;
+import rent.tycoon.business.model.request.product.UpdateProductRequestModel;
 import rent.tycoon.business.model.response.CreateProductResponseModel;
 import rent.tycoon.business.model.response.GetProductResponseModel;
+import rent.tycoon.business.model.response.UpdateProductResponseModel;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -37,5 +42,17 @@ public class ProductController {
     public GetProductResponseModel findByProductName(@PathVariable("name") String name) throws ProductCustomException {
         return this.inputBoundary.findProductByName(name);
     }
+
+    @PostMapping("/update")
+    public ResponseEntity<UpdateProductResponseModel> updateProduct(@RequestBody UpdateProductRequestModel requestModel) {
+        try {
+            UpdateProductResponseModel responseModel = inputBoundary.update(requestModel);
+            return new ResponseEntity<>(responseModel, HttpStatus.OK);
+        } catch (ProductCustomException e) {
+            // Handle exception and return appropriate response
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }
 

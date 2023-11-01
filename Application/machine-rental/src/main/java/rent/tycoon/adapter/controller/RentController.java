@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import rent.tycoon.business.boundaries.input.IRentBoundary;
 import rent.tycoon.business.exeption.RentCustomException;
-import rent.tycoon.business.model.request.create.CreateRentRequestModel;
+import rent.tycoon.business.model.request.CreateRentRequestModel;
 import rent.tycoon.business.model.response.CreateRentResponseModel;
 
 
