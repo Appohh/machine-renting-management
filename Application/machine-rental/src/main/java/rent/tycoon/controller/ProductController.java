@@ -3,7 +3,7 @@ package rent.tycoon.controller;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import rent.tycoon.business.interfaces.service_interfaces.IProductBoundary;
+import rent.tycoon.business.interfaces.service_interfaces.IProductService;
 import rent.tycoon.business.exeption.ProductCustomException;
 import rent.tycoon.business.model.request.accessory.CreateAccessoryRequestModel;
 import rent.tycoon.business.model.request.machine.CreateMachineRequestModel;
@@ -18,10 +18,10 @@ import java.util.List;
 @RestController()
 @RequestMapping("/Product")
 public class ProductController {
-    private final IProductBoundary inputBoundary;
+    private final IProductService inputBoundary;
 
 
-    public ProductController(IProductBoundary inputBoundary) {
+    public ProductController(IProductService inputBoundary) {
         this.inputBoundary = inputBoundary;
     }
 

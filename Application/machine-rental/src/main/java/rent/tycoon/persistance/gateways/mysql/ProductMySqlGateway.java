@@ -8,8 +8,7 @@ import rent.tycoon.persistance.converter.GetProductConverter;
 import rent.tycoon.persistance.converter.UpdateProductConverter;
 import rent.tycoon.persistance.gateways.mapper.FilesJpaMapper;
 import rent.tycoon.persistance.gateways.mapper.ProductJpaMapper;
-import rent.tycoon.persistance.repositories.IProductRepository;
-import rent.tycoon.business.interfaces.repo_interfaces.IProductRegisterGateway;
+import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
 import rent.tycoon.domain.IProduct;
 import rent.tycoon.domain.factory.IProductFactory;
 
@@ -18,12 +17,12 @@ import java.util.List;
 import static rent.tycoon.persistance.converter.CreateProductConverter.mapFiles;
 
 @Repository
-public class ProductMySqlGateway implements IProductRegisterGateway {
-    private final IProductRepository repository;
+public class ProductMySqlGateway implements IProductRepo {
+    private final rent.tycoon.persistance.repositories.IProductRepository repository;
     private final IProductFactory factory;
 
     @Autowired
-    public ProductMySqlGateway(IProductRepository repository, IProductFactory factory) {
+    public ProductMySqlGateway(rent.tycoon.persistance.repositories.IProductRepository repository, IProductFactory factory) {
         this.repository = repository;
         this.factory = factory;
     }

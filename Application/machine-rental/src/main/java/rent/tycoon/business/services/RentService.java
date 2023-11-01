@@ -2,8 +2,8 @@ package rent.tycoon.business.services;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import rent.tycoon.business.interfaces.service_interfaces.IRentBoundary;
-import rent.tycoon.business.interfaces.repo_interfaces.IRentGateway;
+import rent.tycoon.business.interfaces.service_interfaces.IRentService;
+import rent.tycoon.business.interfaces.repo_interfaces.IRentRepo;
 import rent.tycoon.business.exeption.RentCustomException;
 import rent.tycoon.business.model.request.CreateRentRequestModel;
 import rent.tycoon.business.model.response.CreateRentResponseModel;
@@ -13,8 +13,8 @@ import java.util.Date;
 
 @Service
 @AllArgsConstructor
-public class RentService implements IRentBoundary {
-    IRentGateway gateway;
+public class RentService implements IRentService {
+    IRentRepo gateway;
 
     @Override
     public CreateRentResponseModel create(CreateRentRequestModel requestModel) throws RentCustomException{

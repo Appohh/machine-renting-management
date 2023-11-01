@@ -4,7 +4,7 @@ import rent.tycoon.domain.IProduct;
 
 import java.util.List;
 
-public interface IProductRegisterGateway extends IProductExistsGateway{
+public interface IProductRepo extends IProductExistsGateway{
     long save(IProduct product);
     List<IProduct> findProductByName(String name);
     IProduct update(IProduct product);

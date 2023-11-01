@@ -3,8 +3,8 @@ package rent.tycoon.business.services;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import rent.tycoon.business.interfaces.service_interfaces.IProductBoundary;
-import rent.tycoon.business.interfaces.repo_interfaces.IProductRegisterGateway;
+import rent.tycoon.business.interfaces.service_interfaces.IProductService;
+import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
 import rent.tycoon.business.converter.FileConverter;
 import rent.tycoon.business.exeption.ProductCustomException;
 import rent.tycoon.business.model.request.accessory.UpdateAccessoryRequestModel;
@@ -26,9 +26,9 @@ import java.util.Objects;
 
 @Service
 @AllArgsConstructor
-public class ProductService implements IProductBoundary {
+public class ProductService implements IProductService {
     IProductFactory factory;
-    IProductRegisterGateway gateway;
+    IProductRepo gateway;
     StorageService storageService;
 
     @Override

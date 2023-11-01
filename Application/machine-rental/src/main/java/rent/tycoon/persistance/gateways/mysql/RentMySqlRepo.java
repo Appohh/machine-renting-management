@@ -3,17 +3,16 @@ package rent.tycoon.persistance.gateways.mysql;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import rent.tycoon.persistance.gateways.mapper.RentJpaMapper;
-import rent.tycoon.persistance.repositories.IRentRepository;
-import rent.tycoon.business.interfaces.repo_interfaces.IRentGateway;
+import rent.tycoon.business.interfaces.repo_interfaces.IRentRepo;
 import rent.tycoon.domain.Rent;
 
 
 @Repository
-public class RentMySqlGateway implements IRentGateway {
-    private final IRentRepository repository;
+public class RentMySqlRepo implements IRentRepo {
+    private final rent.tycoon.persistance.repositories.IRentRepository repository;
 
     @Autowired
-    public RentMySqlGateway(IRentRepository repository) {this.repository = repository;}
+    public RentMySqlRepo(rent.tycoon.persistance.repositories.IRentRepository repository) {this.repository = repository;}
 
     public long save(Rent rent){
         RentJpaMapper rentJpaMapper = RentJpaMapper.builder()

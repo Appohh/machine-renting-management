@@ -4,6 +4,6 @@ import rent.tycoon.business.exeption.RentCustomException;
 import rent.tycoon.business.model.request.CreateRentRequestModel;
 import rent.tycoon.business.model.response.CreateRentResponseModel;
 
-public interface IRentBoundary {
+public interface IRentService {
     CreateRentResponseModel create(CreateRentRequestModel responseModel) throws RentCustomException;
 }
