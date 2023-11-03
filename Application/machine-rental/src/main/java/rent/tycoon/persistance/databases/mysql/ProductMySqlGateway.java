@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import rent.tycoon.persistance.converter.CreateProductConverter;
 import rent.tycoon.persistance.converter.GetProductConverter;
 import rent.tycoon.persistance.converter.UpdateProductConverter;
+import rent.tycoon.persistance.databases.entity.MachineJpaMapper;
 import rent.tycoon.persistance.databases.entity.ProductJpaMapper;
 import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
 import rent.tycoon.domain.IProduct;
@@ -46,18 +47,18 @@ public class ProductMySqlGateway implements IProductRepo {
 
 
     @Transactional
-    public IProduct update(IProduct product) {
-        long productId = product.getId();
+    public IProduct update(IProduct newProduct) {
+        long productId = newProduct.getId();
 
         if (!existsById(String.valueOf(productId))) {
             throw new RuntimeException("Product with Id: " + productId + " doesnt exist");
         }
 
-        ProductJpaMapper existingProduct = repository.findById(String.valueOf(productId)).orElse(null);
 
-        ProductJpaMapper savedProduct = UpdateProductConverter.UpdateExistingProduct(existingProduct);
+        ProductJpaMapper oldProduct = repository.findById(String.valueOf(productId)).orElse(null);
+        ProductJpaMapper savedProduct = UpdateProductConverter.UpdateExistingProduct(newProduct, oldProduct);
 
-        ProductJpaMapper newProduct = repository.save(savedProduct);
-        return UpdateProductConverter.toProduct(newProduct, factory);
+        ProductJpaMapper product = repository.save(savedProduct);
+        return UpdateProductConverter.toProduct(product, factory);
     }
 }

@@ -2,6 +2,7 @@ package rent.tycoon.persistance.databases.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.repository.query.Param;
 
 import java.math.BigDecimal;
 import java.util.List;
