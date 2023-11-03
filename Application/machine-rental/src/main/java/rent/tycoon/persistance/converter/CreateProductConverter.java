@@ -17,7 +17,7 @@ public class CreateProductConverter {
     private CreateProductConverter(){}
 
     public static ProductJpaMapper toProductJpaMapper(IProduct iProduct) {
-        List<FilesJpaMapper> filesJpaMappers = mapFiles(iProduct.getFileUrl());
+        List<FilesJpaMapper> filesJpaMappers = FilesConverter.mapToJpaFiles(iProduct.getFileUrl());
         if (iProduct instanceof Machine machine) {
             return new MachineJpaMapper(
                     0,
@@ -44,27 +44,5 @@ public class CreateProductConverter {
         } else {
             throw new IllegalArgumentException("Invalid product type: " + iProduct.getClass().getSimpleName());
         }
-    }
-
-
-
-
-        
-
-    public static List<FilesJpaMapper> mapFiles(List<Files> fileUrl) {
-        List<FilesJpaMapper> filesJpaMapper = new ArrayList<>();
-        if (fileUrl != null) {
-            for (Files file : fileUrl) {
-                filesJpaMapper.add(createFilesJpaMapper(file.getFileUrl(), file.getType()));
-            }
-        }
-        return filesJpaMapper;
-    }
-
-    private static FilesJpaMapper createFilesJpaMapper(String fileUrl, String type) {
-        return FilesJpaMapper.builder()
-                .fileUrl(fileUrl)
-                .type(type)
-                .build();
     }
 }

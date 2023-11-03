@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import rent.tycoon.persistance.converter.CreateProductConverter;
 import rent.tycoon.persistance.converter.GetProductConverter;
 import rent.tycoon.persistance.converter.UpdateProductConverter;
-import rent.tycoon.persistance.databases.entity.FilesJpaMapper;
 import rent.tycoon.persistance.databases.entity.ProductJpaMapper;
 import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
 import rent.tycoon.domain.IProduct;
@@ -14,8 +13,6 @@ import rent.tycoon.domain.factory.IProductFactory;
 import rent.tycoon.persistance.repositories.IProductRepository;
 
 import java.util.List;
-
-import static rent.tycoon.persistance.converter.CreateProductConverter.mapFiles;
 
 @Repository
 public class ProductMySqlGateway implements IProductRepo {
@@ -49,8 +46,8 @@ public class ProductMySqlGateway implements IProductRepo {
 
 
     @Transactional
-    public IProduct update(IProduct updatedProduct) {
-        long productId = updatedProduct.getId();
+    public IProduct update(IProduct product) {
+        long productId = product.getId();
 
         if (!existsById(String.valueOf(productId))) {
             throw new RuntimeException("Product with Id: " + productId + " doesnt exist");
@@ -58,22 +55,9 @@ public class ProductMySqlGateway implements IProductRepo {
 
         ProductJpaMapper existingProduct = repository.findById(String.valueOf(productId)).orElse(null);
 
-        if (existingProduct != null) {
-            existingProduct.setName(updatedProduct.getName());
-            existingProduct.setDescription(updatedProduct.getDescription());
-            existingProduct.setStatus(updatedProduct.getStatus());
-            existingProduct.setPrice(updatedProduct.getPrice());
-            existingProduct.setType(updatedProduct.getType());
-            List<FilesJpaMapper> updatedFiles = mapFiles(updatedProduct.getFileUrl());
-            existingProduct.getFiles().clear();
-            existingProduct.getFiles().addAll(updatedFiles);
+        ProductJpaMapper savedProduct = UpdateProductConverter.UpdateExistingProduct(existingProduct);
 
-            ProductJpaMapper savedProduct = repository.save(existingProduct);
-            return UpdateProductConverter.toProductJpaMapper(savedProduct, factory);
-
-        } else {
-            throw new RuntimeException("No se pudo encontrar el producto con ID " + productId);
-        }
+        ProductJpaMapper newProduct = repository.save(savedProduct);
+        return UpdateProductConverter.toProduct(newProduct, factory);
     }
-
 }
