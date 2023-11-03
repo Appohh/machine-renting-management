@@ -17,10 +17,10 @@ public class RentMySqlGateway implements IRentRepo {
 
     public long save(Rent rent){
         RentJpaMapper rentJpaMapper = RentJpaMapper.builder()
-                .productId(rent.getProductId())
+                //.productId(rent.getProductId())
                 .customerId(rent.getCustomerId())
-                .start(rent.getStart())
-                .end(rent.getEnd())
+                //.start(rent.getStart())
+                //.end(rent.getEnd())
                 .address(rent.getAddress())
                 .city(rent.getCity())
                 .timestamp(rent.getTimestamp())

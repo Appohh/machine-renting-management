@@ -20,10 +20,10 @@ public class RentJpaMapper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long productId;
+   //private long productId;
     private long customerId;
-    private Date start;
-    private Date end;
+    //private Date start;
+    //private Date end;
     private String address;
     private String city;
     @Timestamp
