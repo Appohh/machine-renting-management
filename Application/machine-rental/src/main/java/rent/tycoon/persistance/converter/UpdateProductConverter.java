@@ -1,5 +1,7 @@
 package rent.tycoon.persistance.converter;
 
+import rent.tycoon.domain.Accessory;
+import rent.tycoon.domain.Machine;
 import rent.tycoon.persistance.databases.entity.AccessoryJpaMapper;
 import rent.tycoon.persistance.databases.entity.FilesJpaMapper;
 import rent.tycoon.persistance.databases.entity.MachineJpaMapper;
@@ -29,19 +31,28 @@ public class UpdateProductConverter {
     }
 
 
-    public static ProductJpaMapper UpdateExistingProduct(ProductJpaMapper existingProduct) {
-        ProductJpaMapper updatedProduct = new ProductJpaMapper();
-
-        if (existingProduct != null) {
-            updatedProduct.setName(existingProduct.getName());
-            updatedProduct.setDescription(existingProduct.getDescription());
-            updatedProduct.setStatus(existingProduct.getStatus());
-            updatedProduct.setPrice(existingProduct.getPrice());
-            updatedProduct.setType(existingProduct.getType());
-            List<FilesJpaMapper> updatedFiles = FilesConverter.updateFiles(existingProduct.getFiles());
-            updatedProduct.getFiles().addAll(updatedFiles);
+    public static ProductJpaMapper UpdateExistingProduct(IProduct newProduct, ProductJpaMapper oldProduct) {
+        if (newProduct != null) {
+            oldProduct.setName(newProduct.getName());
+            oldProduct.setDescription(newProduct.getDescription());
+            oldProduct.setStatus(newProduct.getStatus());
+            oldProduct.setPrice(newProduct.getPrice());
+            oldProduct.setType(newProduct.getType());
+            List<FilesJpaMapper> updatedFiles = FilesConverter.mapToJpaFiles(newProduct.getFileUrl());
+            oldProduct.getFiles().clear();
+            oldProduct.getFiles().addAll(updatedFiles);
         }
-        return updatedProduct;
+        if (newProduct instanceof Machine) {
+            MachineJpaMapper machine = (MachineJpaMapper) oldProduct;
+            machine.setMachineSpecificField(((Machine) newProduct).getMachineSpecificField());
+        }
+        else if (newProduct instanceof Accessory) {
+            AccessoryJpaMapper Accessory = (AccessoryJpaMapper) oldProduct;
+            Accessory.setAccessorySpecificField(((Accessory) newProduct).getAccessorySpecificField());
+        }
+
+
+        return oldProduct;
     }
 
 }
