@@ -10,11 +10,8 @@ import java.util.Date;
 @NoArgsConstructor
 public class Rent {
     private long id;
-    //Hier nog een list van maken. Maakt mogelijk dat een user meerdere producten kan renten tegelijkertijd
-    private long productId;
+    //Hier nog een list van maken. Maakt mogelijk dat een user meerdere producten kan renten tegelijkertijds
     private long customerId;
-    private Date start;
-    private Date end;
     private String address;
     private String city;
     private Date timestamp;

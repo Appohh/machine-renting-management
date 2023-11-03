@@ -18,11 +18,8 @@ public class RentService implements IRentService {
 
     @Override
     public CreateRentResponseModel create(CreateRentRequestModel requestModel) throws RentCustomException{
-        if (gateway.existsByProductId(requestModel.getProductId())){
-            throw new RentCustomException("Rent with the productId" + requestModel.getProductId() + " Already in database");
-        }
 
-        Rent rent = new Rent(0, requestModel.getProductId(), requestModel.getCustomerId(), requestModel.getStart(), requestModel.getEnd(), requestModel.getAddress(), requestModel.getCity(), new Date(), requestModel.getTotal(), requestModel.getDiscount(), 0);
+        Rent rent = new Rent(0, requestModel.getCustomerId(), requestModel.getAddress(), requestModel.getCity(), new Date(), requestModel.getTotal(), requestModel.getDiscount(), 0);
 
         long id = gateway.save(rent);
 

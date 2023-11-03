@@ -12,10 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateRentRequestModel {
-    private int productId;
     private int customerId;
-    private Date start;
-    private Date end;
     private String address;
     private String city;
     private Date timestamp;
