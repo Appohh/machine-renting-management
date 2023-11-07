@@ -1,5 +1,9 @@
 package rent.tycoon.domain;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jdk.jfr.Timestamp;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -10,7 +14,6 @@ import java.util.Date;
 @NoArgsConstructor
 public class Rent {
     private long id;
-    //Hier nog een list van maken. Maakt mogelijk dat een user meerdere producten kan renten tegelijkertijds
     private long customerId;
     private String address;
     private String city;
@@ -18,5 +21,9 @@ public class Rent {
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
+
+    private long product_id;
+    private Date startDate;
+    private Date endDate;
 
 }

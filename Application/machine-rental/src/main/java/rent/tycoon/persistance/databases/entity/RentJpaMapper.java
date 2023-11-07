@@ -19,6 +19,7 @@ import java.util.Date;
 public class RentJpaMapper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private long id;
     private long customerId;
     private String address;
@@ -28,4 +29,5 @@ public class RentJpaMapper {
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
+
 }
