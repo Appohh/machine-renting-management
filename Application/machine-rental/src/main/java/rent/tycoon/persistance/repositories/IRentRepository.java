@@ -6,5 +6,4 @@ import rent.tycoon.persistance.databases.entity.RentJpaMapper;
 
 @Repository
 public interface IRentRepository extends JpaRepository<RentJpaMapper, String> {
-    boolean existsByProductId (long productId);
 }

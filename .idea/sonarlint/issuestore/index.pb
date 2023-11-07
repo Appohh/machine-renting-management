@@ -185,3 +185,15 @@ fApplication/machine-rental/src/main/java/rent/tycoon/persistance/converter/Crea
 ^Application/machine-rental/src/main/java/rent/tycoon/persistance/converter/FilesConverter.java,7\e\7ea679a01aa69b2e9149ae478d2c7adc15d39a9f
 –
 fApplication/machine-rental/src/main/java/rent/tycoon/persistance/converter/UpdateProductConverter.java,f\d\fd7bb310ccfafa64cfce5213c564435e8604c32b
+•
+eApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/FilesJpaMapper.java,5\f\5f5e48123a011d7d9ed84e71367f37ce1b68b738
+—
+gApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/MachineJpaMapper.java,d\5\d5608bbe9a4fc70e048035c7e1abcdc42638d30f
+†
+VApplication/machine-rental/src/main/java/rent/tycoon/controller/ProductController.java,e\3\e31160aaa74ad4ffd22c3f590d35ade5b16015bd
+™
+iApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/AccessoryJpaMapper.java,d\8\d8fb5b5a3516e3a67a818dce7a86950edd108d81
+—
+gApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/ProductJpaMapper.java,e\9\e9eacf872796b43cde3e84f948f435c3ccd8ca3c
+”
+dApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/RentJpaMapper.java,e\b\eba95c390cb2c5015024f24c6aba08656b577343

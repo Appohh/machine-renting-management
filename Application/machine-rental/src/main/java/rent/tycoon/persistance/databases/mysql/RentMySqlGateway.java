@@ -13,14 +13,11 @@ public class RentMySqlGateway implements IRentRepo {
     private final IRentRepository repository;
 
     @Autowired
-    public RentMySqlGateway(rent.tycoon.persistance.repositories.IRentRepository repository) {this.repository = repository;}
+    public RentMySqlGateway(IRentRepository repository) {this.repository = repository;}
 
     public long save(Rent rent){
         RentJpaMapper rentJpaMapper = RentJpaMapper.builder()
-                //.productId(rent.getProductId())
                 .customerId(rent.getCustomerId())
-                //.start(rent.getStart())
-                //.end(rent.getEnd())
                 .address(rent.getAddress())
                 .city(rent.getCity())
                 .timestamp(rent.getTimestamp())
@@ -29,10 +26,5 @@ public class RentMySqlGateway implements IRentRepo {
                 .paid(rent.getPaid())
                 .build();
         return repository.save(rentJpaMapper).getId();
-    }
-
-    @Override
-    public boolean existsByProductId(long productId){
-        return repository.existsByProductId(productId);
     }
 }
