@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController()
 @RequestMapping("/Product")
+@CrossOrigin(origins = "http://localhost:5174")
 public class ProductController {
     private final IProductService inputBoundary;
 
@@ -26,8 +27,8 @@ public class ProductController {
     }
 
     @PostMapping("/machine")
-    public CreateProductResponseModel createMachine(@RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("status") int status, @RequestParam("price") BigDecimal price, @RequestParam ("files") List<MultipartFile> files, @RequestParam("machineSpecificField") String machineSpecificField ) throws ProductCustomException {
-        CreateMachineRequestModel requestModel = new CreateMachineRequestModel(name, description, status, price, files, "machine" , machineSpecificField);
+    public CreateProductResponseModel createMachine(@RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("price") BigDecimal price, @RequestParam ("files") List<MultipartFile> files, @RequestParam("machineSpecificField") String machineSpecificField ) throws ProductCustomException {
+        CreateMachineRequestModel requestModel = new CreateMachineRequestModel(name, description, 0, price, files, "machine" , machineSpecificField);
         return this.inputBoundary.create(requestModel);
     }
     @PostMapping("/accessory")

@@ -185,3 +185,15 @@ Q.idea/sonarlint/securityhotspotstore/5/f/5f5e48123a011d7d9ed84e71367f37ce1b68b7
 Q.idea/sonarlint/securityhotspotstore/e/9/e9eacf872796b43cde3e84f948f435c3ccd8ca3c,e\3\e36c22b7b05017e98a96e3c5c2c29f7e4eea14f7
 Å
 Q.idea/sonarlint/securityhotspotstore/a/0/a020c4150c4044b1b8c3588a71bf48ac18709715,d\9\d96951b638bfd3db536d63dd6cf2e218f5a00fa4
+ï
+eApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/FilesJpaMapper.java,5\f\5f5e48123a011d7d9ed84e71367f37ce1b68b738
+ó
+gApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/MachineJpaMapper.java,d\5\d5608bbe9a4fc70e048035c7e1abcdc42638d30f
+Ü
+VApplication/machine-rental/src/main/java/rent/tycoon/controller/ProductController.java,e\3\e31160aaa74ad4ffd22c3f590d35ade5b16015bd
+ô
+iApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/AccessoryJpaMapper.java,d\8\d8fb5b5a3516e3a67a818dce7a86950edd108d81
+ó
+gApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/ProductJpaMapper.java,e\9\e9eacf872796b43cde3e84f948f435c3ccd8ca3c
+î
+dApplication/machine-rental/src/main/java/rent/tycoon/persistance/databases/entity/RentJpaMapper.java,e\b\eba95c390cb2c5015024f24c6aba08656b577343

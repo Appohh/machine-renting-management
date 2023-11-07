@@ -19,6 +19,11 @@ public class RentService implements IRentService {
     @Override
     public CreateRentResponseModel create(CreateRentRequestModel requestModel) throws RentCustomException{
 
+        //ff test
+        if (requestModel.getTotal() == null) {
+            throw new RentCustomException("Product with total is null");
+        }
+
         Rent rent = new Rent(0, requestModel.getCustomerId(), requestModel.getAddress(), requestModel.getCity(), new Date(), requestModel.getTotal(), requestModel.getDiscount(), 0);
 
         long id = gateway.save(rent);

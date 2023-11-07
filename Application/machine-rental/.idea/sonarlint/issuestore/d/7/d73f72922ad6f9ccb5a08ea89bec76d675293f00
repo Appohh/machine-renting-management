@@ -1,5 +1,0 @@
-
-o
-java:S6204,"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8Öâ›½¸1
-s
-java:S1128"VRemove this unused import 'rent.tycoon.business.model.request.GetProductRequestModel'.(Œû¤¦8“•“Ð¸1
