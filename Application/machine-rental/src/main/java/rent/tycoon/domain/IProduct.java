@@ -11,6 +11,6 @@ public interface IProduct {
     String getDescription();
     int getStatus();
     BigDecimal getPrice();
-    List<Files> getFileUrl();
+    List<Files> getFiles();
     String getType();
 }

@@ -14,16 +14,14 @@ import rent.tycoon.persistance.repositories.IRentRowRepository;
 @Repository
 public class RentMySqlGateway implements IRentRepo {
     private final IRentRepository repository;
-    private final IRentRowRepository rentRowRepository;
 
     @Autowired
-    public RentMySqlGateway(IRentRepository repository, IRentRowRepository rentRowRepository) {this.repository = repository; this.rentRowRepository=rentRowRepository;}
+    public RentMySqlGateway(IRentRepository repository) {this.repository = repository;}
 
     public long save(Rent rent){
-        RentJpaMapper rentJpaMapper = RentConverter.convertToRentJpaMapper(rent);
-        RentRowJpaMapper rentRowJpaMapper = RentConverter.convertToRentRowJpaMapper(rent);
-        rentRowRepository.save(rentRowJpaMapper);
-        return repository.save(rentJpaMapper).getId();
+//        RentJpaMapper rentJpaMapper = RentConverter.convertToRentJpaMapper(rent);
+//        return repository.save(rentJpaMapper).getId();
+        return 0;
 
     }
 }

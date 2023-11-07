@@ -20,7 +20,7 @@ public class CreateRentRequestModel {
     private BigDecimal discount;
     private int paid;
 
-    private long product_id;
+    private long productId;
     private Date startDate;
     private Date endDate;
 }

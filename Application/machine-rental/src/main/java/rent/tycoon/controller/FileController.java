@@ -14,9 +14,8 @@ import java.nio.file.Paths;
 
 @RestController
 @RequestMapping("/api/files")
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "http://localhost:5173")
 public class FileController {
-
     private final FileStorageProperties fileStorageProperties;
 
 
@@ -25,11 +24,11 @@ public class FileController {
         this.fileStorageProperties = fileStorageProperties;
     }
 
-    @GetMapping("/{postId}/{fileName}")
-    public ResponseEntity<Resource> serveFile(@PathVariable long postId, @PathVariable String fileName) {
+    @GetMapping("/{productId}/{fileName}")
+    public ResponseEntity<Resource> serveFile(@PathVariable long productId, @PathVariable String fileName) {
         String baseDir = fileStorageProperties.getUploadDir();
 
-        Path filePath = Paths.get(baseDir, "ProductNumber_" + postId, fileName);
+        Path filePath = Paths.get(baseDir, "ProductNumber_" + productId, fileName);
         Resource resource = new FileSystemResource(filePath);
 
         if (resource.exists() && resource.isReadable()) {

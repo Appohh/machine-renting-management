@@ -31,14 +31,14 @@ public class UpdateProductConverter {
     }
 
 
-    public static ProductJpaMapper UpdateExistingProduct(IProduct newProduct, ProductJpaMapper oldProduct) {
+    public static ProductJpaMapper updateExistingProduct(IProduct newProduct, ProductJpaMapper oldProduct) {
         if (newProduct != null) {
             oldProduct.setName(newProduct.getName());
             oldProduct.setDescription(newProduct.getDescription());
             oldProduct.setStatus(newProduct.getStatus());
             oldProduct.setPrice(newProduct.getPrice());
             oldProduct.setType(newProduct.getType());
-            List<FilesJpaMapper> updatedFiles = FilesConverter.mapToJpaFiles(newProduct.getFileUrl());
+            List<FilesJpaMapper> updatedFiles = FilesConverter.mapToJpaFiles(newProduct.getFiles());
             oldProduct.getFiles().clear();
             oldProduct.getFiles().addAll(updatedFiles);
         }
@@ -47,8 +47,8 @@ public class UpdateProductConverter {
             machine.setMachineSpecificField(((Machine) newProduct).getMachineSpecificField());
         }
         else if (newProduct instanceof Accessory) {
-            AccessoryJpaMapper Accessory = (AccessoryJpaMapper) oldProduct;
-            Accessory.setAccessorySpecificField(((Accessory) newProduct).getAccessorySpecificField());
+            AccessoryJpaMapper accessory = (AccessoryJpaMapper) oldProduct;
+            accessory.setAccessorySpecificField(((Accessory) newProduct).getAccessorySpecificField());
         }
 
 

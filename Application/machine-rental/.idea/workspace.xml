@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ff5057a-7851-4c32-8abd-83f1557d5eaa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/9/6/96861bc766a440624890b8e3ac245759ef9752e4" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/9/6/96861bc766a440624890b8e3ac245759ef9752e4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/d/5/d5608bbe9a4fc70e048035c7e1abcdc42638d30f" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/d/5/d5608bbe9a4fc70e048035c7e1abcdc42638d30f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/d/8/d8fb5b5a3516e3a67a818dce7a86950edd108d81" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/d/8/d8fb5b5a3516e3a67a818dce7a86950edd108d81" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/e/9/e9eacf872796b43cde3e84f948f435c3ccd8ca3c" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/e/9/e9eacf872796b43cde3e84f948f435c3ccd8ca3c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/e/b/eba95c390cb2c5015024f24c6aba08656b577343" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/e/b/eba95c390cb2c5015024f24c6aba08656b577343" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/f/d/fd7bb310ccfafa64cfce5213c564435e8604c32b" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/f/d/fd7bb310ccfafa64cfce5213c564435e8604c32b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/.eslintrc.cjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/public/vite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/App.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/main.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/pages/AddRent.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/pages/Home.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/src/services/RentService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/machine-rental-react/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../uploads/ProductNumber_9/excavator-isolated-on-a-transparent-background-png.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +42,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -74,30 +54,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ProductFunctionality&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jarno/Projects/rental-tycoon/rental-tycoon/Application/machine-rental&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/alpay/Dev_projects/rental-tycoon/Application/machine-rental/src/main/java/rent/tycoon/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;301151c616b64b98d2783561ce69bc01&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/jarno/Projects/rental-tycoon/rental-tycoon/Application/machine-rental",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/alpay/Dev_projects/rental-tycoon/Application/machine-rental/src/main/java/rent/tycoon/Main.java",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "301151c616b64b98d2783561ce69bc01",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="machine-rental.main" />
@@ -129,6 +109,7 @@
       <workItem from="1699002508817" duration="3171000" />
       <workItem from="1699283467882" duration="5990000" />
       <workItem from="1699360332909" duration="994000" />
+      <workItem from="1699362433906" duration="9807000" />
     </task>
     <servers />
   </component>

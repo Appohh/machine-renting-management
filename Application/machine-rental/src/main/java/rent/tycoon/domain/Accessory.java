@@ -43,5 +43,5 @@ public class Accessory implements IProduct{
     @Override
     public String getType(){return type;}
     @Override
-    public List<Files> getFileUrl(){return files;}
+    public List<Files> getFiles(){return files;}
 }

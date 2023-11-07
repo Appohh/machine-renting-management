@@ -20,12 +20,15 @@ public class RentRowJpaMapper {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter
     private long id;
-    private long rent_id;
-    private long product_id;
+    private long rentId;
+    private long productId;
     private Date startDate;
     private Date endDate;
     @Timestamp
     private Date timestamp;
+    @ManyToOne
+    @JoinColumn(name = "rent_id")
+    private RentJpaMapper product;
 
 
 

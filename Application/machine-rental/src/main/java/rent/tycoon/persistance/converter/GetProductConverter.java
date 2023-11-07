@@ -22,7 +22,7 @@ public class GetProductConverter {
         for (ProductJpaMapper productJpaMapper : productJpaMappers) {
             IProduct product;
             if (productJpaMapper instanceof MachineJpaMapper machine) {
-                product = factory.createMachine(0, machine.getName(), machine.getDescription(), machine.getStatus(), machine.getPrice(), mapFiles(machine.getFiles()), machine.getType(),machine.getMachineSpecificField());
+                product = factory.createMachine(machine.getId(), machine.getName(), machine.getDescription(), machine.getStatus(), machine.getPrice(), mapFiles(machine.getFiles()), machine.getType(),machine.getMachineSpecificField());
                 productList.add(product);
             }
             else if (productJpaMapper instanceof AccessoryJpaMapper accessory) {

@@ -1,9 +1,6 @@
 package rent.tycoon.persistance.converter;
 
-import rent.tycoon.persistance.databases.entity.AccessoryJpaMapper;
-import rent.tycoon.persistance.databases.entity.FilesJpaMapper;
-import rent.tycoon.persistance.databases.entity.MachineJpaMapper;
-import rent.tycoon.persistance.databases.entity.ProductJpaMapper;
+import rent.tycoon.persistance.databases.entity.*;
 import rent.tycoon.domain.Accessory;
 import rent.tycoon.domain.Files;
 import rent.tycoon.domain.IProduct;
@@ -17,7 +14,7 @@ public class CreateProductConverter {
     private CreateProductConverter(){}
 
     public static ProductJpaMapper toProductJpaMapper(IProduct iProduct) {
-        List<FilesJpaMapper> filesJpaMappers = FilesConverter.mapToJpaFiles(iProduct.getFileUrl());
+        List<FilesJpaMapper> filesJpaMappers = FilesConverter.mapToJpaFiles(iProduct.getFiles());
         if (iProduct instanceof Machine machine) {
             return new MachineJpaMapper(
                     0,

@@ -37,7 +37,7 @@ public class Machine implements IProduct {
     @Override
     public BigDecimal getPrice(){return price;}
     @Override
-    public List<Files> getFileUrl(){return files;}
+    public List<Files> getFiles(){return files;}
     @Override
     public String getType(){return type;}
 }

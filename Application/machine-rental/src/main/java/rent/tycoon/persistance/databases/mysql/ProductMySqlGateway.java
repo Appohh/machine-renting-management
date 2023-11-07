@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import rent.tycoon.persistance.converter.CreateProductConverter;
 import rent.tycoon.persistance.converter.GetProductConverter;
 import rent.tycoon.persistance.converter.UpdateProductConverter;
-import rent.tycoon.persistance.databases.entity.MachineJpaMapper;
 import rent.tycoon.persistance.databases.entity.ProductJpaMapper;
 import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
 import rent.tycoon.domain.IProduct;
@@ -56,9 +55,12 @@ public class ProductMySqlGateway implements IProductRepo {
 
 
         ProductJpaMapper oldProduct = repository.findById(String.valueOf(productId)).orElse(null);
-        ProductJpaMapper savedProduct = UpdateProductConverter.UpdateExistingProduct(newProduct, oldProduct);
+        ProductJpaMapper savedProduct = UpdateProductConverter.updateExistingProduct(newProduct, oldProduct);
 
-        ProductJpaMapper product = repository.save(savedProduct);
+        ProductJpaMapper product = null;
+        if (savedProduct != null) {
+            product = repository.save(savedProduct);
+        }
         return UpdateProductConverter.toProduct(product, factory);
     }
 }

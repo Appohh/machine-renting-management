@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Rent")
@@ -29,5 +30,7 @@ public class RentJpaMapper {
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
+    @OneToMany(mappedBy = "Rent", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RentRowJpaMapper> rentRowJpaMapper;
 
 }

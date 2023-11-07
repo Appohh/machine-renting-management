@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController()
 @RequestMapping("/Product")
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "http://localhost:5173")
 public class ProductController {
     private final IProductService inputBoundary;
 
