@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "Rent")
+@Table(name = "rent")
 @Getter
 @Builder
 @AllArgsConstructor
@@ -30,7 +30,7 @@ public class RentJpaMapper {
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
-    @OneToMany(mappedBy = "Rent", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RentRowJpaMapper> rentRow;
 
 

@@ -53,3 +53,17 @@ k
 ;src/main/java/rent/tycoon/controller/ProductController.java,3\8\38483f6407606969a69591082353465504c907bc
 …
 Usrc/main/java/rent/tycoon/business/interfaces/service_interfaces/IProductService.java,4\6\46cbcaba07f8d6b1b537cf0eacd86de57c688bf8
+{
+Ksrc/main/java/rent/tycoon/persistance/converter/CreateProductConverter.java,4\0\40c65e56b943b13dc1257bb67cc7c68dc6e09053
+|
+Lsrc/main/java/rent/tycoon/business/model/request/CreateRentRequestModel.java,a\2\a22bd483750ea06891e118b7b46c557f97fba8af
+s
+Csrc/main/java/rent/tycoon/persistance/converter/FilesConverter.java,5\6\564cb027cf3040e04826d00566849e7ce8625baf
+|
+Lsrc/main/java/rent/tycoon/persistance/databases/entity/ProductJpaMapper.java,b\5\b523fdc69d2ea9b334c96c808327e776efddb208
+~
+Nsrc/main/java/rent/tycoon/persistance/databases/mysql/ProductMySqlGateway.java,b\8\b8a67ea665a7df532bc4be02f1d8ca05b2daf759
+|
+Lsrc/main/java/rent/tycoon/persistance/databases/entity/RentRowJpaMapper.java,b\c\bc4205ee7c6d2b8ca2fdeb206c83e781757e6b74
+r
+Bsrc/main/java/rent/tycoon/persistance/converter/RentConverter.java,b\e\becfe00e905b6ccac851e02fc0c273e5532bf37b
