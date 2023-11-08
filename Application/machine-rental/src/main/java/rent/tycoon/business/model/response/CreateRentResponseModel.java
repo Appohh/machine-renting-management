@@ -6,5 +6,5 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 public class CreateRentResponseModel {
-    private long id;
+    private long rentId;
 }

@@ -8,8 +8,11 @@ import rent.tycoon.business.exeption.RentCustomException;
 import rent.tycoon.business.model.request.CreateRentRequestModel;
 import rent.tycoon.business.model.response.CreateRentResponseModel;
 import rent.tycoon.domain.Rent;
+import rent.tycoon.domain.RentRow;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -24,10 +27,14 @@ public class RentService implements IRentService {
             throw new RentCustomException("Product with total is null");
         }
 
-        Rent rent = new Rent(0, requestModel.getCustomerId(), requestModel.getAddress(), requestModel.getCity(), new Date(), requestModel.getTotal(), requestModel.getDiscount(), 0,requestModel.getProduct_id(),requestModel.getStartDate(),requestModel.getEndDate());
+        List<RentRow> rows = new ArrayList<>(requestModel.getRows());
+
+        Rent rent = new Rent(0, requestModel.getCustomerId(), requestModel.getAddress(), requestModel.getCity(), new Date(), requestModel.getTotal(), requestModel.getDiscount(), 0,rows);
 
         long id = gateway.save(rent);
 
-        return new CreateRentResponseModel(id);
+        return CreateRentResponseModel.builder()
+                .rentId(id)
+                .build();
     }
 }

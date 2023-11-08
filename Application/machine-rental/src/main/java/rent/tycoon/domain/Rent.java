@@ -8,6 +8,8 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+
 @AllArgsConstructor
 @Getter
 @Builder
@@ -21,9 +23,7 @@ public class Rent {
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
+    private List<RentRow> rows;
 
-    private long productId;
-    private Date startDate;
-    private Date endDate;
 
 }

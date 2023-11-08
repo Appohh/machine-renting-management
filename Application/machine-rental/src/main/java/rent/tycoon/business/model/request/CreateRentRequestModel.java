@@ -4,9 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import rent.tycoon.domain.RentRow;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -19,8 +22,5 @@ public class CreateRentRequestModel {
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
-
-    private long productId;
-    private Date startDate;
-    private Date endDate;
+    private List<RentRow>rows;
 }

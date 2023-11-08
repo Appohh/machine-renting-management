@@ -31,6 +31,7 @@ public class RentJpaMapper {
     private BigDecimal discount;
     private int paid;
     @OneToMany(mappedBy = "Rent", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RentRowJpaMapper> rentRowJpaMapper;
+    private List<RentRowJpaMapper> rentRow;
+
 
 }
