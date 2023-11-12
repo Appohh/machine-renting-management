@@ -67,3 +67,15 @@ Nsrc/main/java/rent/tycoon/persistance/databases/mysql/ProductMySqlGateway.java
 Lsrc/main/java/rent/tycoon/persistance/databases/entity/RentRowJpaMapper.java,b\c\bc4205ee7c6d2b8ca2fdeb206c83e781757e6b74
 r
 Bsrc/main/java/rent/tycoon/persistance/converter/RentConverter.java,b\e\becfe00e905b6ccac851e02fc0c273e5532bf37b
+?
+settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
+
+Osrc/main/java/rent/tycoon/business/interfaces/repo_interfaces/IProductRepo.java,3\0\3086321a393f34662a8948757fdbfc8641dc5415
+z
+Jsrc/main/java/rent/tycoon/persistance/repositories/IProductRepository.java,c\d\cd2b712021ea8c57883a7b2e42981d02434934c9
+x
+Hsrc/main/java/rent/tycoon/persistance/converter/GetProductConverter.java,5\0\50f432cb01dc116007223f13457d08739efb8846
+‡
+Wsrc/main/java/rent/tycoon/business/model/request/product/CreateProductRequestModel.java,8\5\85d67df7b0d5d1b71a4cd46c48a90ebb303fedaa
+s
+Csrc/test/java/rent/tycoon/business/services/ProductServiceTest.java,0\1\01e0301e4e0dc48699d1a499ba8caa0072e6977d
