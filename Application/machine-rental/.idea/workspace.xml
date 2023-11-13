@@ -92,7 +92,7 @@
       <recent name="rent.tycoon.business.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ProductServiceTest">
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="ProductServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -185,7 +185,10 @@
       <workItem from="1699546687985" duration="1838000" />
       <workItem from="1699603436265" duration="769000" />
       <workItem from="1699798963581" duration="2251000" />
-      <workItem from="1699801245301" duration="415000" />
+      <workItem from="1699801245301" duration="1023000" />
+      <workItem from="1699865945919" duration="1644000" />
+      <workItem from="1699868724626" duration="135000" />
+      <workItem from="1699874115617" duration="4000" />
     </task>
     <servers />
   </component>
