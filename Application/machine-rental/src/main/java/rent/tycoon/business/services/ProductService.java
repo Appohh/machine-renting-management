@@ -40,14 +40,12 @@ public class ProductService implements IProductService {
         List <Files> files = FileConverter.convertToFileObject(requestModel.getFiles());
 
         IProduct product;
-        if (Objects.equals(requestModel.getType(), "machine")) {
-            CreateMachineRequestModel machineRequestModel = (CreateMachineRequestModel) requestModel;
-            product = factory.createMachine(0, requestModel.getName(), requestModel.getDescription(), requestModel.getStatus(), requestModel.getPrice(), files, requestModel.getType(), machineRequestModel.getMachineSpecificField());
-        } else if (Objects.equals(requestModel.getType(), "accessory")) {
-            CreateAccessoryRequestModel accessoryRequestModel = (CreateAccessoryRequestModel) requestModel;
-            product = factory.createAccessory(0, requestModel.getName(), requestModel.getDescription(), requestModel.getStatus(), requestModel.getPrice(), files, requestModel.getType(),  accessoryRequestModel.getAccessorySpecificField());
+        if ( requestModel instanceof CreateMachineRequestModel machineRequestModel){
+            product = factory.createMachine(0, machineRequestModel.getName(), machineRequestModel.getDescription(), machineRequestModel.getStatus(), machineRequestModel.getPrice(), files, machineRequestModel.getMachineSpecificField(), machineRequestModel.getCategory());
+        } else if ( requestModel instanceof CreateAccessoryRequestModel accessoryRequestModel){
+            product = factory.createAccessory(0, accessoryRequestModel.getName(), accessoryRequestModel.getDescription(), accessoryRequestModel.getStatus(), accessoryRequestModel.getPrice(), files,  accessoryRequestModel.getAccessorySpecificField());
         } else {
-            throw new ProductCustomException("Invalid product type: " + requestModel.getType());
+            throw new ProductCustomException("Invalid product type: ");
         }
 
         long result = gateway.save(product);
@@ -85,14 +83,12 @@ public class ProductService implements IProductService {
         List <Files> files = FileConverter.convertToFileObject(requestModel.getFiles());
 
         IProduct updatedProduct;
-        if (Objects.equals(requestModel.getType(), "machine")) {
-            UpdateMachineRequestModel machineRequestModel = (UpdateMachineRequestModel) requestModel;
-            updatedProduct = factory.createMachine(requestModel.getId(), requestModel.getName(), requestModel.getDescription(), requestModel.getStatus(), requestModel.getPrice(), files, requestModel.getType(), machineRequestModel.getMachineSpecificField());
-        } else if (Objects.equals(requestModel.getType(), "accessory")) {
-            UpdateAccessoryRequestModel accessoryRequestModel = (UpdateAccessoryRequestModel) requestModel;
-            updatedProduct = factory.createAccessory(requestModel.getId(), requestModel.getName(), requestModel.getDescription(), requestModel.getStatus(), requestModel.getPrice(), files, requestModel.getType(), accessoryRequestModel.getAccessorySpecificField());
+        if ( requestModel instanceof UpdateMachineRequestModel machineRequestModel){
+            updatedProduct = factory.createMachine(machineRequestModel.getId(), machineRequestModel.getName(), machineRequestModel.getDescription(), machineRequestModel.getStatus(), machineRequestModel.getPrice(), files, machineRequestModel.getMachineSpecificField(), machineRequestModel.getCategory());
+        } else if ( requestModel instanceof UpdateAccessoryRequestModel accessoryRequestModel){
+            updatedProduct = factory.createAccessory(accessoryRequestModel.getId(), accessoryRequestModel.getName(), accessoryRequestModel.getDescription(), accessoryRequestModel.getStatus(), accessoryRequestModel.getPrice(), files,  accessoryRequestModel.getAccessorySpecificField());
         } else {
-            throw new ProductCustomException("Invalid product type: " + requestModel.getType());
+            throw new ProductCustomException("Invalid product type: ");
         }
 
         IProduct product = gateway.update(updatedProduct);

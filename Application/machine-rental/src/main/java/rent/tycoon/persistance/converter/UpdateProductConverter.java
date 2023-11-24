@@ -20,10 +20,10 @@ public class UpdateProductConverter {
         IProduct product;
 
         if (productJpaMapper instanceof MachineJpaMapper machine) {
-            product = factory.createMachine(machine.getId(), machine.getName(), machine.getDescription(), machine.getStatus(), machine.getPrice(), FilesConverter.mapToFiles(machine.getFiles()), machine.getType(), machine.getMachineSpecificField());
+            product = factory.createMachine(machine.getId(), machine.getName(), machine.getDescription(), machine.getStatus(), machine.getPrice(), FilesConverter.mapToFiles(machine.getFiles()), machine.getMachineSpecificField(), m);
             return product;
         } else if (productJpaMapper instanceof AccessoryJpaMapper accessory) {
-            product = factory.createAccessory(accessory.getId(), accessory.getName(), accessory.getDescription(), accessory.getStatus(), accessory.getPrice(), FilesConverter.mapToFiles(accessory.getFiles()), accessory.getType(), accessory.getAccessorySpecificField());
+            product = factory.createAccessory(accessory.getId(), accessory.getName(), accessory.getDescription(), accessory.getStatus(), accessory.getPrice(), FilesConverter.mapToFiles(accessory.getFiles()), accessory.getAccessorySpecificField());
             return product;
         }
         throw new IllegalArgumentException("Theatre not found");
@@ -37,7 +37,6 @@ public class UpdateProductConverter {
             oldProduct.setDescription(newProduct.getDescription());
             oldProduct.setStatus(newProduct.getStatus());
             oldProduct.setPrice(newProduct.getPrice());
-            oldProduct.setType(newProduct.getType());
             List<FilesJpaMapper> updatedFiles = FilesConverter.mapToJpaFiles(newProduct.getFiles());
             oldProduct.getFiles().clear();
             oldProduct.getFiles().addAll(updatedFiles);

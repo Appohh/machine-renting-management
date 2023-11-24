@@ -14,8 +14,8 @@ import java.util.List;
 public class UpdateAccessoryRequestModel extends UpdateProductRequestModel {
     private String accessorySpecificField;
 
-    public UpdateAccessoryRequestModel(long Id,String name, String description, int status, BigDecimal price, List<MultipartFile> files, String type, String accessorySpecificField) {
-        super(Id,name, description, status, price, files, type);
+    public UpdateAccessoryRequestModel(long id,String name, String description, int status, BigDecimal price, List<MultipartFile> files, String accessorySpecificField) {
+        super(id,name, description, status, price, files);
         this.accessorySpecificField = accessorySpecificField;
     }
 }

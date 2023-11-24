@@ -23,7 +23,6 @@ public class CreateProductConverter {
                     machine.getStatus(),
                     machine.getPrice(),
                     filesJpaMappers,
-                    machine.getType(),
                     machine.getMachineSpecificField()
             );
 
@@ -35,7 +34,6 @@ public class CreateProductConverter {
                     accessory.getStatus(),
                     accessory.getPrice(),
                     filesJpaMappers,
-                    accessory.getType(),
                     accessory.getAccessorySpecificField()
             );
         } else {

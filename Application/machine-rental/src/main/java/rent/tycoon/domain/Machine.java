@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
+@Getter
 public class Machine implements IProduct {
     private long id;
     private String name;
@@ -13,9 +15,8 @@ public class Machine implements IProduct {
     private int status;
     private BigDecimal price;
     private List <Files> files;
-    private String type;
-    @Getter
     private String machineSpecificField;
+    private Set<Category> machineCategory;
 
 
     @Override
@@ -38,7 +39,5 @@ public class Machine implements IProduct {
     public BigDecimal getPrice(){return price;}
     @Override
     public List<Files> getFiles(){return files;}
-    @Override
-    public String getType(){return type;}
 }
 

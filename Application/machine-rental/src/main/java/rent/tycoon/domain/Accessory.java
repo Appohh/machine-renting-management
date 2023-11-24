@@ -17,7 +17,6 @@ public class Accessory implements IProduct{
     private int status;
     private BigDecimal price;
     private List<Files> files;
-    private String type;
     private String accessorySpecificField;
 
 
@@ -40,8 +39,6 @@ public class Accessory implements IProduct{
     }
     @Override
     public BigDecimal getPrice(){return price;}
-    @Override
-    public String getType(){return type;}
     @Override
     public List<Files> getFiles(){return files;}
 }

@@ -25,5 +25,4 @@ public class ProductJpaMapper {
     private BigDecimal price;
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FilesJpaMapper> files;
-    private String type;
 }

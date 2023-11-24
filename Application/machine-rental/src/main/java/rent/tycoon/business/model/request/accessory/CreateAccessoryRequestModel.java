@@ -14,8 +14,8 @@ import java.util.List;
 public class CreateAccessoryRequestModel extends CreateProductRequestModel {
     private String accessorySpecificField;
 
-    public CreateAccessoryRequestModel(String name, String description, int status, BigDecimal price, List<MultipartFile> files, String type, String accessorySpecificField) {
-        super(name, description, status, price, files, type);
+    public CreateAccessoryRequestModel(String name, String description, int status, BigDecimal price, List<MultipartFile> files, String accessorySpecificField) {
+        super(name, description, status, price, files);
         this.accessorySpecificField = accessorySpecificField;
     }
 }

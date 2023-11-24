@@ -14,11 +14,10 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 public class UpdateProductRequestModel {
-    private long Id;
+    private long id;
     private String name;
     private String description;
     private int status;
     private BigDecimal price;
     private List<MultipartFile> files;
-    private String type;
 }

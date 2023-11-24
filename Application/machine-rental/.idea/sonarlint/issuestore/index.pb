@@ -79,3 +79,11 @@ Hsrc/main/java/rent/tycoon/persistance/converter/GetProductConverter.java,5\0\5
 Wsrc/main/java/rent/tycoon/business/model/request/product/CreateProductRequestModel.java,8\5\85d67df7b0d5d1b71a4cd46c48a90ebb303fedaa
 s
 Csrc/test/java/rent/tycoon/business/services/ProductServiceTest.java,0\1\01e0301e4e0dc48699d1a499ba8caa0072e6977d
+z
+Jsrc/main/java/rent/tycoon/persistance/databases/entity/FilesJpaMapper.java,d\f\df9a80c8cbf2c1b6b69cd435d6248cadd757a186
+~
+Nsrc/main/java/rent/tycoon/persistance/databases/entity/AccessoryJpaMapper.java,f\2\f232dcb6349a8163d6ba3d3832f90817446895a7
+|
+Lsrc/main/java/rent/tycoon/persistance/databases/entity/MachineJpaMapper.java,a\5\a53a48779dc92d3f0fd0d4e28f3aecf6dbebfb29
+‡
+Wsrc/main/java/rent/tycoon/business/model/request/machine/CreateMachineRequestModel.java,2\7\27700aa6e71fe7574465926a367108312a62e952

@@ -15,8 +15,8 @@ import java.util.List;
 public class AccessoryJpaMapper extends ProductJpaMapper {
     private String accessorySpecificField;
 
-    public AccessoryJpaMapper(long id, String name, String description, int status, BigDecimal price, List<FilesJpaMapper> files, String type, String machineSpecificField) {
-        super(id, name, description, status, price, files, type);
+    public AccessoryJpaMapper(long id, String name, String description, int status, BigDecimal price, List<FilesJpaMapper> files, String machineSpecificField) {
+        super(id, name, description, status, price, files);
         this.accessorySpecificField = machineSpecificField;
     }
 }

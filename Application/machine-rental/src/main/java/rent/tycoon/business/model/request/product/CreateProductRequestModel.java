@@ -18,5 +18,4 @@ public class CreateProductRequestModel {
     private int status;
     private BigDecimal price;
     private List<MultipartFile> files;
-    private String type;
 }
