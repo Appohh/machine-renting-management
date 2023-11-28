@@ -14,4 +14,6 @@ public interface IProductRepository extends JpaRepository<ProductJpaMapper, Stri
     @Query("SELECT p FROM ProductJpaMapper p WHERE LOWER(p.name) LIKE LOWER(CONCAT('%', :name, '%'))")
     List<ProductJpaMapper> findProductByName(@Param("name") String name);
 
+    @Query("SELECT p FROM MachineJpaMapper p JOIN p.categories c WHERE c.id = :categoryId")
+    List<ProductJpaMapper> findByCategoryId(@Param("categoryId") Integer categoryId);
 }

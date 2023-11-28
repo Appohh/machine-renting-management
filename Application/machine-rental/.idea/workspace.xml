@@ -30,10 +30,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,6 +89,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="rent.tycoon.persistance.converter" />
       <recent name="rent.tycoon.domain" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -200,7 +201,9 @@
       <workItem from="1700305892253" duration="8436000" />
       <workItem from="1700468111486" duration="74000" />
       <workItem from="1700468500888" duration="8000" />
-      <workItem from="1700813962682" duration="4135000" />
+      <workItem from="1700813962682" duration="8014000" />
+      <workItem from="1700826762119" duration="4644000" />
+      <workItem from="1701187239581" duration="4254000" />
     </task>
     <servers />
   </component>
@@ -228,6 +231,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/persistance/converter/RentConverter.java</url>
           <line>34</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/controller/ProductController.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 public interface IProductFactory {
-    IProduct createMachine(long id, String name, String description, int status, BigDecimal price, List<Files> files, String machineSpecificField, Set<Category> category);
+    IProduct createMachine(long id, String name, String description, int status, BigDecimal price, List<Files> files, String machineSpecificField, Set<Integer> category);
 
     IProduct createAccessory(long id, String name, String description, int status, BigDecimal price, List<Files> files, String accessorySpecificField);
 }

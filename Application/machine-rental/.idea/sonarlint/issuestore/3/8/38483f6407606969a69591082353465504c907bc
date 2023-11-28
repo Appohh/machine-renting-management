@@ -1,3 +1,5 @@
 
-^
-java:S1192"HDefine a constant instead of duplicating this literal "machine" 3 times.(ìÍáå
+°
+java:S1130>"Remove the declaration of thrown exception 'rent.tycoon.business.exeption.ProductCustomException', as it cannot be thrown from method's body.(€šë´ıÿÿÿÿ8—Ø‰À1
+U
+java:S1128"8Remove this unused import 'rent.tycoon.domain.Category'.(Ãá¨æ8ËñÌŒÀ1

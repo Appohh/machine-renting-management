@@ -1,2 +1,9 @@
 
-b	java:S1125"FDefine and throw a dedicated exception instead of using a generic one.(â‹‚©8‰à™ó½1
+b	java:S112?"FDefine and throw a dedicated exception instead of using a generic one.(â‹‚©8‡„À1
+l	java:S117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âòÏ?8Ÿ‡„À1
+f
+java:S1612Q"IReplace this lambda with method reference 'categoryRepository::findById'.(©ªÅÅ8¶‡„À1
+x
+java:S1128"VRemove this unused import 'rent.tycoon.persistance.databases.entity.MachineJpaMapper'.(±¼§…øÿÿÿÿ8¤‡À1
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8¹‡„À1

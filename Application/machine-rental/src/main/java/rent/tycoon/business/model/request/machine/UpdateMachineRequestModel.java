@@ -14,8 +14,8 @@ import java.util.Set;
 @Getter
 public class UpdateMachineRequestModel extends UpdateProductRequestModel {
     private String machineSpecificField;
-    private Set<Category> category;
-    public UpdateMachineRequestModel (long id, String name, String description, int status, BigDecimal price, List<MultipartFile> files, String machineSpecificField, Set<Category> category) {
+    private Set<Integer> category;
+    public UpdateMachineRequestModel (long id, String name, String description, int status, BigDecimal price, List<MultipartFile> files, String machineSpecificField, Set<Integer> category) {
         super(id, name, description, status, price, files);
         this.machineSpecificField = machineSpecificField;
         this.category = category;

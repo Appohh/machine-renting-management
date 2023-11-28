@@ -13,9 +13,7 @@ import rent.tycoon.business.model.request.product.UpdateProductRequestModel;
 import rent.tycoon.business.model.request.accessory.CreateAccessoryRequestModel;
 import rent.tycoon.business.model.request.machine.CreateMachineRequestModel;
 import rent.tycoon.business.model.request.product.CreateProductRequestModel;
-import rent.tycoon.business.model.response.CreateProductResponseModel;
-import rent.tycoon.business.model.response.GetProductResponseModel;
-import rent.tycoon.business.model.response.UpdateProductResponseModel;
+import rent.tycoon.business.model.response.*;
 import rent.tycoon.domain.Files;
 import rent.tycoon.domain.IProduct;
 import rent.tycoon.domain.factory.IProductFactory;
@@ -96,7 +94,15 @@ public class ProductService implements IProductService {
         return new UpdateProductResponseModel(product);
     }
 
+    @Override
+    public GetProductbyIdResponseModel getProductbyId(Long id){
+        IProduct product = gateway.getProductbyId(id);
+        return new GetProductbyIdResponseModel(product);
+    }
 
-
-
+    @Override
+    public FilterMachineResponseModel getMachineByCategory (Integer categoryId){
+        List<IProduct> products = gateway.getMachineByCategory(categoryId);
+        return new FilterMachineResponseModel(products);
+    }
 }

@@ -16,7 +16,7 @@ public class Machine implements IProduct {
     private BigDecimal price;
     private List <Files> files;
     private String machineSpecificField;
-    private Set<Category> machineCategory;
+    private Set<Integer> machineCategory;
 
 
     @Override

@@ -3,30 +3,36 @@ package rent.tycoon.persistance.databases.mysql;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import rent.tycoon.domain.Machine;
 import rent.tycoon.persistance.converter.CreateProductConverter;
-import rent.tycoon.persistance.converter.GetProductConverter;
-import rent.tycoon.persistance.converter.UpdateProductConverter;
+import rent.tycoon.persistance.converter.ProductConverter;
+import rent.tycoon.persistance.databases.entity.CategoryJpaMapper;
 import rent.tycoon.persistance.databases.entity.ProductJpaMapper;
 import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
 import rent.tycoon.domain.IProduct;
 import rent.tycoon.domain.factory.IProductFactory;
+import rent.tycoon.persistance.repositories.ICategoryRepository;
 import rent.tycoon.persistance.repositories.IProductRepository;
 
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class ProductMySqlGateway implements IProductRepo {
     private final IProductRepository repository;
     private final IProductFactory factory;
-
+    private final ICategoryRepository categoryRepository;
+    private final ProductConverter productConverter;
     @Autowired
-    public ProductMySqlGateway(rent.tycoon.persistance.repositories.IProductRepository repository, IProductFactory factory) {
+    public ProductMySqlGateway(rent.tycoon.persistance.repositories.IProductRepository repository, IProductFactory factory, ICategoryRepository categoryRepository, ProductConverter productConverter) {
         this.repository = repository;
         this.factory = factory;
+        this.categoryRepository = categoryRepository;
+        this.productConverter = productConverter;
     }
     @Transactional
     public long save(IProduct iProduct) {
-        ProductJpaMapper productJpaMapper = CreateProductConverter.toProductJpaMapper(iProduct);
+        Set<CategoryJpaMapper> categoryJpaMapper = findCategoriesByIds(iProduct);
+        ProductJpaMapper productJpaMapper = CreateProductConverter.toProductJpaMapper(iProduct, categoryJpaMapper);
         productJpaMapper.getFiles().forEach(files -> files.setProduct(productJpaMapper));
         return repository.save(productJpaMapper).getId();
     }
@@ -40,7 +46,7 @@ public class ProductMySqlGateway implements IProductRepo {
     @Override
     public List<IProduct> findProductByName(String name){
         List <ProductJpaMapper> product = repository.findProductByName(name);
-        return GetProductConverter.toProductJpaMapper(product, factory);
+        return productConverter.toListOfProduct(product, factory);
     }
 
 
@@ -54,13 +60,53 @@ public class ProductMySqlGateway implements IProductRepo {
         }
 
 
+        Set<CategoryJpaMapper> categoryJpaMapper = findCategoriesByIds(newProduct);
         ProductJpaMapper oldProduct = repository.findById(String.valueOf(productId)).orElse(null);
-        ProductJpaMapper savedProduct = UpdateProductConverter.updateExistingProduct(newProduct, oldProduct);
+        ProductJpaMapper savedProduct = productConverter.updateExistingProduct(newProduct, oldProduct, categoryJpaMapper);
 
         ProductJpaMapper product = null;
         if (savedProduct != null) {
             product = repository.save(savedProduct);
         }
-        return UpdateProductConverter.toProduct(product, factory);
+        return productConverter.toProduct(product, factory);
     }
+
+    public List <IProduct> getMachineByCategory (Integer categoryId){
+        List <ProductJpaMapper> product =  repository.findByCategoryId(categoryId);
+        return productConverter.toListOfProduct(product, factory);
+    }
+
+    @Override
+    public IProduct getProductbyId(Long id){
+        List<ProductJpaMapper> jpaProducts = repository.findAll();
+        List<IProduct> products = productConverter.toListOfProduct(jpaProducts, factory);
+        for(IProduct product : products){
+            if(product.getId()==id) {
+                return product;
+            }
+        }return null;
+    }
+
+    private Set<CategoryJpaMapper> findCategoriesByIds(IProduct iProduct) {
+        Set<CategoryJpaMapper> categoryJpaMappers = new HashSet<>();
+
+        if (iProduct instanceof Machine machine) {
+            for (Integer id : machine.getMachineCategory()) {
+                categoryRepository.findById(id)
+                        .ifPresent(categoryJpaMappers::add);
+            }
+        }
+
+        return categoryJpaMappers;
+    }
+
+    //    public List<Category> findCategoryById(List<Integer> categoryIds) {
+//        return categoryIds.stream()
+//                .map(categoryRepository::findById)
+//                .filter(Optional::isPresent)
+//                .map(Optional::get)
+//                .map(CategoryConverter::toCategory)
+//                .filter(Objects::nonNull)
+//                .toList();
+//    }
 }

@@ -13,7 +13,7 @@ import java.util.Set;
 @Configuration
 public class ProductFactory implements IProductFactory {
     @Override
-    public Machine createMachine(long id, String name, String description, int status, BigDecimal price, List<Files> files, String machineSpecificField, Set<Category> category){
+    public Machine createMachine(long id, String name, String description, int status, BigDecimal price, List<Files> files, String machineSpecificField, Set<Integer> category){
         return new Machine(id,name,description,status,price, files, machineSpecificField, category);
     }
 

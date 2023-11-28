@@ -8,12 +8,13 @@ import rent.tycoon.domain.Machine;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class CreateProductConverter {
 
     private CreateProductConverter(){}
 
-    public static ProductJpaMapper toProductJpaMapper(IProduct iProduct) {
+    public static ProductJpaMapper toProductJpaMapper(IProduct iProduct, Set<CategoryJpaMapper> categoryJpaMapper) {
         List<FilesJpaMapper> filesJpaMappers = FilesConverter.mapToJpaFiles(iProduct.getFiles());
         if (iProduct instanceof Machine machine) {
             return new MachineJpaMapper(
@@ -23,7 +24,9 @@ public class CreateProductConverter {
                     machine.getStatus(),
                     machine.getPrice(),
                     filesJpaMappers,
-                    machine.getMachineSpecificField()
+                    machine.getMachineSpecificField(),
+                    categoryJpaMapper
+
             );
 
         } else if (iProduct instanceof Accessory accessory) {
