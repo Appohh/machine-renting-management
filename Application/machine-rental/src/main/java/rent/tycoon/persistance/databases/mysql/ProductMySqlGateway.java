@@ -23,7 +23,7 @@ public class ProductMySqlGateway implements IProductRepo {
     private final ICategoryRepository categoryRepository;
     private final ProductConverter productConverter;
     @Autowired
-    public ProductMySqlGateway(rent.tycoon.persistance.repositories.IProductRepository repository, IProductFactory factory, ICategoryRepository categoryRepository, ProductConverter productConverter) {
+    public ProductMySqlGateway(IProductRepository repository, IProductFactory factory, ICategoryRepository categoryRepository, ProductConverter productConverter) {
         this.repository = repository;
         this.factory = factory;
         this.categoryRepository = categoryRepository;

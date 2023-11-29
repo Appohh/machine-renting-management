@@ -19,4 +19,5 @@ public class CategoryJpaMapper {
     private String name;
     @ManyToMany(mappedBy = "categories")
     private Set<MachineJpaMapper> machines = new HashSet<>();
+
 }
