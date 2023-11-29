@@ -17,5 +17,7 @@ public class Customer {
     private String city;
     private String email;
     private int phone;
-    private Date timestamp;
+    private Date timeStamp;
+
+    private String password;
 }
