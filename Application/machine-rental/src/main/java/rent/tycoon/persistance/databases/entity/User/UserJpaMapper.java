@@ -21,7 +21,7 @@ public class UserJpaMapper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name="first_name")
     private String firstName;
@@ -46,7 +46,7 @@ public class UserJpaMapper {
     private int phone;
 
     @Column(name = "time_stamp")
-    private String timeStamp;
+    private Date timeStamp;
 
     @Column(name = "password")
     private String password;
