@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config.swagger;
+package rent.tycoon.persistance.config.security.swagger;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
