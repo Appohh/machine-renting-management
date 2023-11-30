@@ -1,6 +1,7 @@
 package rent.tycoon.business.services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import rent.tycoon.persistance.repositories.IUserRepositroy;
 
