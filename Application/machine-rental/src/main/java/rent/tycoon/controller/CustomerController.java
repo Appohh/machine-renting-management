@@ -11,7 +11,7 @@ import rent.tycoon.business.model.response.customer.GetAllCustomerResponseModel;
 import rent.tycoon.business.services.CustomerService;
 
 @RestController
-@RequestMapping("/tokens")
+@RequestMapping("/customers")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:5173")
 public class CustomerController {
