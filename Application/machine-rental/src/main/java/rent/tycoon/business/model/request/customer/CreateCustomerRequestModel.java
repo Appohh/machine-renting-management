@@ -28,8 +28,8 @@ public class CreateCustomerRequestModel {
     private String email;
     @NotNull
     private int phone;
-    @NotNull
-    private Date timeStamp;
+
+    //no TimeStamp because its new date
 
     @NotBlank
     private String password;
