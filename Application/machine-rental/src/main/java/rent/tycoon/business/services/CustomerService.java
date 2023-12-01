@@ -53,6 +53,8 @@ public class CustomerService {
                         .user(newCustomer)
                         .role(UserRoles.Customer)
                         .build()));
+
+        return userRepositroy.save(newCustomer);
     }
 
     //GetAllCustomer
