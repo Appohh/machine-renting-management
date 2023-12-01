@@ -5,12 +5,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import rent.tycoon.business.model.request.customer.CreateCustomerRequestModel;
 import rent.tycoon.business.model.response.customer.CreateCustomerResponseModel;
+import rent.tycoon.business.model.response.customer.GetAllCustomerResponseModel;
+import rent.tycoon.domain.Customer;
+import rent.tycoon.persistance.converter.CustomerConverter;
 import rent.tycoon.persistance.databases.entity.User.UserJpaMapper;
 import rent.tycoon.persistance.databases.entity.User.UserRoleJpaMapper;
 import rent.tycoon.persistance.databases.entity.User.UserRoles;
 import rent.tycoon.persistance.repositories.IUserRepositroy;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -58,6 +62,20 @@ public class CustomerService {
     }
 
     //GetAllCustomer
+    //TODO: Change to get users with the specific role
+    public GetAllCustomerResponseModel getAllCustomer()
+    {
+        List<UserJpaMapper> userJpaMappers;
+
+        userJpaMappers = userRepositroy.findAll();
+
+        List<Customer> customers = userJpaMappers
+                .stream()
+                .map(CustomerConverter::CustomerConvert)
+                .toList();
+
+        return GetAllCustomerResponseModel.builder().customers(customers).build();
+    }
 
     //
 }
