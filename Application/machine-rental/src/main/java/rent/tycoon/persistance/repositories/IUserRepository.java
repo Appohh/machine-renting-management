@@ -14,5 +14,5 @@ public interface IUserRepository extends JpaRepository<UserJpaMapper, String> {
 
     UserJpaMapper findUserJpaMapperByEmail(String email);
 
-    List<UserJpaMapper> findUserJpaMappersByUserRoles(Set<UserRoleJpaMapper> userRoles);
+    //List<UserJpaMapper> findUserJpaMappersByUserRoles(Set<UserRoleJpaMapper> userRoles);
 }
