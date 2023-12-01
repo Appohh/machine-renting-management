@@ -49,6 +49,8 @@ public class CustomerService {
                 .email(requestModel.getEmail())
                 .phone(requestModel.getPhone())
                 .timeStamp(new Date())
+
+                .password(hashedPassword)
                 .build();
 
         //roles
