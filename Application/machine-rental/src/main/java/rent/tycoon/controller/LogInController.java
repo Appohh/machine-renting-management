@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/tokens")
 @RequiredArgsConstructor
 @CrossOrigin(origins = "http://localhost:5173")
-public class CustomerController {
+public class LogInController {
 }
