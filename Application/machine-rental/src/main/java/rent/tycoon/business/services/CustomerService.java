@@ -77,5 +77,4 @@ public class CustomerService {
         return GetAllCustomerResponseModel.builder().customers(customers).build();
     }
 
-    //
 }
