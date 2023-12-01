@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 @Repository
-public interface IUserRepositroy extends JpaRepository<UserJpaMapper, String> {
+public interface IUserRepository extends JpaRepository<UserJpaMapper, String> {
 
     UserJpaMapper findUserJpaMapperByEmail(String email);
 

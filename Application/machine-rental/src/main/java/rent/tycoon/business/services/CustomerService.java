@@ -11,7 +11,7 @@ import rent.tycoon.persistance.converter.CustomerConverter;
 import rent.tycoon.persistance.databases.entity.User.UserJpaMapper;
 import rent.tycoon.persistance.databases.entity.User.UserRoleJpaMapper;
 import rent.tycoon.persistance.databases.entity.User.UserRoles;
-import rent.tycoon.persistance.repositories.IUserRepositroy;
+import rent.tycoon.persistance.repositories.IUserRepository;
 
 import java.util.Date;
 import java.util.List;
@@ -21,7 +21,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class CustomerService {
 
-    private final IUserRepositroy userRepositroy;
+    private final IUserRepository userRepositroy;
     private final BCryptPasswordEncoder passwordEncoder;
 
     //CreateCustomer
