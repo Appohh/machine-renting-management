@@ -17,7 +17,7 @@ public class UserRoleJpaMapper {
     private Long id;
 
     @NotNull
-    @Column(name = "role")
+    @Column(name = "user_role")
     @Enumerated(EnumType.STRING)
     private UserRoles role;
 

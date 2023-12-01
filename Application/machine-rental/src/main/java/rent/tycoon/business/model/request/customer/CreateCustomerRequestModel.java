@@ -31,6 +31,6 @@ public class CreateCustomerRequestModel {
 
     //no TimeStamp because its new date
 
-    @NotBlank
+
     private String password;
 }
