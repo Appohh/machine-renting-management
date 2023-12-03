@@ -12,7 +12,7 @@ import rent.tycoon.business.model.response.CreateRentResponseModel;
 
 @RestController
 @RequestMapping("/rent")
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
 public class RentController {
 
     private final IRentService inputBoundary;
