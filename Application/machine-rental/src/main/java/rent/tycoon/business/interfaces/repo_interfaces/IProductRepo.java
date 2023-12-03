@@ -13,4 +13,6 @@ public interface IProductRepo extends IProductExistsGateway{
 
     IProduct getProductbyId(Long id);
     List <IProduct> getMachineByCategory (Integer categoryId);
+
+    List<IProduct> getAllProducts();
 }

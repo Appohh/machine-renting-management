@@ -100,6 +100,12 @@ public class ProductMySqlGateway implements IProductRepo {
         return categoryJpaMappers;
     }
 
+    @Override
+    public List<IProduct> getAllProducts(){
+        List <ProductJpaMapper> jpaProducts = repository.findAll();
+        return productConverter.toListOfProduct(jpaProducts, factory);
+    }
+
     //    public List<Category> findCategoryById(List<Integer> categoryIds) {
 //        return categoryIds.stream()
 //                .map(categoryRepository::findById)

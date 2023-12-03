@@ -12,4 +12,6 @@ public interface IProductService {
     UpdateProductResponseModel update(UpdateProductRequestModel requestModel) throws ProductCustomException;
     GetProductbyIdResponseModel getProductbyId(Long id);
     FilterMachineResponseModel getMachineByCategory (Integer categoryId);
+
+    GetProductResponseModel getAllProducts () throws ProductCustomException;
 }

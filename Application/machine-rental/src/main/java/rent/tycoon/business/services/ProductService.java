@@ -105,4 +105,17 @@ public class ProductService implements IProductService {
         List<IProduct> products = gateway.getMachineByCategory(categoryId);
         return new FilterMachineResponseModel(products);
     }
+
+    @Override
+    public GetProductResponseModel getAllProducts () throws ProductCustomException{
+        try{
+            List<IProduct> products = gateway.getAllProducts();
+            return new GetProductResponseModel(products);
+        }
+        catch (Exception e){
+            throw new ProductCustomException("Problem with finding products");
+        }
+
+
+    }
 }

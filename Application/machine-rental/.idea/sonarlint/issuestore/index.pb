@@ -113,3 +113,15 @@ Esrc/main/java/rent/tycoon/persistance/converter/ProductConverter.java,7\b\7b31
 Qsrc/main/java/rent/tycoon/business/model/response/FilterMachineResponseModel.java,8\8\88ee5ce2f2ddd4ecc28e644f354acba3a3920cf5
 y
 Isrc/main/java/rent/tycoon/persistance/converter/ProductConverterImpl.java,5\a\5ace7dcdc361a22311c1cc1be4c668b15fa3ad70
+†
+Vsrc/main/java/rent/tycoon/business/interfaces/service_interfaces/ICategoryService.java,1\2\12fefdae5f99d0310f913d369b7cd0ee6cb3dfc5
+l
+<src/main/java/rent/tycoon/controller/CategoryController.java,3\f\3fb105be3b918f85f3acad66fd5ed9159d50696e
+€
+Psrc/main/java/rent/tycoon/business/interfaces/repo_interfaces/ICategoryRepo.java,1\7\176a82c2348b8b5fd58b53e09dd9df2667db8cd2
+p
+@src/main/java/rent/tycoon/business/services/CategoryService.java,6\c\6c8e14c8b34d7b799e6de3301b3b9fdfa8a2ee32
+|
+Lsrc/main/java/rent/tycoon/business/model/response/CategoryResponseModel.java,9\8\98f1b9de2c74f82ac1bc1bd9f4934f33f0fa1b13
+
+Osrc/main/java/rent/tycoon/persistance/databases/mysql/CategoryMySqlGateway.java,2\8\28b2c27f392602f064d8fe6b32b036f73281028e

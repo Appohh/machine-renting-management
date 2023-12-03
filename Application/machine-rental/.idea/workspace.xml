@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff5057a-7851-4c32-8abd-83f1557d5eaa" name="Changes" comment="" />
+    <list default="true" id="6ff5057a-7851-4c32-8abd-83f1557d5eaa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Documentation/Sprint/Sprint 1/Notes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Documentation/Sprint/Sprint 2/Machine Rental powerpoint sprint 2.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Documentation/Sprint/Sprint 2/Notes.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -207,7 +211,10 @@
       <workItem from="1701196891626" duration="15000" />
       <workItem from="1701199319586" duration="1700000" />
       <workItem from="1701244880114" duration="23000" />
-      <workItem from="1701257808047" duration="5324000" />
+      <workItem from="1701257808047" duration="5431000" />
+      <workItem from="1701269928392" duration="73000" />
+      <workItem from="1701604693321" duration="406000" />
+      <workItem from="1701612531325" duration="591000" />
     </task>
     <servers />
   </component>

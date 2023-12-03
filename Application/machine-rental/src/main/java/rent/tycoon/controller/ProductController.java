@@ -38,6 +38,11 @@ public class ProductController {
         return this.inputBoundary.create(requestModel);
     }
 
+    @GetMapping
+    public GetProductResponseModel GetAllProducts() throws ProductCustomException{
+        return this.inputBoundary.getAllProducts();
+    }
+
     @GetMapping("/mapping/{name}")
     public GetProductResponseModel findByProductName(@PathVariable("name") String name) throws ProductCustomException {
         return this.inputBoundary.findProductByName(name);
