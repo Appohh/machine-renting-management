@@ -68,7 +68,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jarno/Projects/Cr8ive/cr8ive-backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jarno/Downloads/todolist-backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -212,6 +212,9 @@
       <workItem from="1701604693321" duration="406000" />
       <workItem from="1701612531325" duration="591000" />
       <workItem from="1701614020548" duration="8168000" />
+      <workItem from="1701678224824" duration="779000" />
+      <workItem from="1701682723824" duration="63000" />
+      <workItem from="1701690087639" duration="1968000" />
     </task>
     <servers />
   </component>
@@ -223,8 +226,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/controller/RentController.java</url>
-          <line>22</line>
-          <properties class="rent.tycoon.controller.RentController" method="createPost">
+          <line>24</line>
+          <properties class="rent.tycoon.controller.RentController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -239,11 +242,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/persistance/converter/RentConverter.java</url>
           <line>34</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/persistance/databases/mysql/CategoryMySqlGateway.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

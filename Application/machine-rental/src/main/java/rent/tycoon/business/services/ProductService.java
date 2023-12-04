@@ -95,8 +95,8 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public GetProductbyIdResponseModel getProductbyId(Long id){
-        IProduct product = gateway.getProductbyId(id);
+    public GetProductbyIdResponseModel getProductById(Long id){
+        IProduct product = gateway.getProductById(id);
         return new GetProductbyIdResponseModel(product);
     }
 

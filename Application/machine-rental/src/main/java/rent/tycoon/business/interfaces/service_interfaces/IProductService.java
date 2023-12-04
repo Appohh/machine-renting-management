@@ -10,7 +10,7 @@ public interface IProductService {
 
     GetProductResponseModel findProductByName(String name) throws ProductCustomException;
     UpdateProductResponseModel update(UpdateProductRequestModel requestModel) throws ProductCustomException;
-    GetProductbyIdResponseModel getProductbyId(Long id);
+    GetProductbyIdResponseModel getProductById(Long id);
     FilterMachineResponseModel getMachineByCategory (Integer categoryId);
 
     GetProductResponseModel getAllProducts () throws ProductCustomException;

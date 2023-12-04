@@ -77,14 +77,9 @@ public class ProductMySqlGateway implements IProductRepo {
     }
 
     @Override
-    public IProduct getProductbyId(Long id){
-        List<ProductJpaMapper> jpaProducts = repository.findAll();
-        List<IProduct> products = productConverter.toListOfProduct(jpaProducts, factory);
-        for(IProduct product : products){
-            if(product.getId()==id) {
-                return product;
-            }
-        }return null;
+    public IProduct getProductById(Long id){
+        ProductJpaMapper jpaProducts = repository.findByProductId(id);
+        return productConverter.toProduct(jpaProducts, factory);
     }
 
     private Set<CategoryJpaMapper> findCategoriesByIds(IProduct iProduct) {
