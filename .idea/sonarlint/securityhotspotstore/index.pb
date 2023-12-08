@@ -74,8 +74,6 @@ G.idea/sonarlint/issuestore/0/b/0b7bcb80d72e6f38e5007a186c5d4790178fe7e3,e\3\e3
 w
 G.idea/sonarlint/issuestore/f/5/f52c7db9df8ae71407f35a112f7d510a45d954b4,3\e\3e3d6785c3d3a7f2f8e04a7a7b892818da570014
 w
-G.idea/sonarlint/issuestore/f/d/fd7bb310ccfafa64cfce5213c564435e8604c32b,f\6\f697965afbc329d652f16a66cdddd2eed1954501
-w
 G.idea/sonarlint/issuestore/e/b/eba95c390cb2c5015024f24c6aba08656b577343,c\f\cfeee9a8b4514f32fd40d0e885c3ea3be1f813de
 w
 G.idea/sonarlint/issuestore/5/e/5ef700786e0b99f4875b1de491b183a0655fe51e,7\d\7df2791c5603e3076b8dd1fa9580bc49e2656392
@@ -145,10 +143,6 @@ Q.idea/sonarlint/securityhotspotstore/1/f/1f498eb53d6d6d98b38b57628f76b968e66329
 Q.idea/sonarlint/securityhotspotstore/3/d/3d7dda15157fc31185a380102852f4719db6220b,d\2\d231bf6514ecb7d39e7d1951744b11d0f2b401b9
 Å
 Q.idea/sonarlint/securityhotspotstore/d/5/d5608bbe9a4fc70e048035c7e1abcdc42638d30f,a\0\a0600c38ab76be9a1c23155a909755e78a9d8709
-Å
-Q.idea/sonarlint/securityhotspotstore/f/d/fd7bb310ccfafa64cfce5213c564435e8604c32b,8\f\8f8af478048e9718ae2c8ffb100ee67665f157e0
-ñ
-fApplication/machine-rental/src/main/java/rent/tycoon/persistance/converter/UpdateProductConverter.java,f\d\fd7bb310ccfafa64cfce5213c564435e8604c32b
 Å
 Q.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0,b\b\bbf202272a96de5cd6b6828ffdc55fb3ce45289c
 Å

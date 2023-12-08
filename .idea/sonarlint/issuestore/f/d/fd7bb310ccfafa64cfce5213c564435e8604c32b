@@ -1,7 +1,0 @@
-
-r	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›®†çıÿÿÿÿ8›ø¥¹1
-o	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÄ©„øÿÿÿÿ8»™¥¹1
-e
-java:S6201-"HReplace this instanceof check and cast with 'instanceof Machine machine'(„Õğ¦8å¥¹1
-n
-java:S62011"LReplace this instanceof check and cast with 'instanceof Accessory accessory'(±§¹©ûÿÿÿÿ8åôŸ¥¹1
