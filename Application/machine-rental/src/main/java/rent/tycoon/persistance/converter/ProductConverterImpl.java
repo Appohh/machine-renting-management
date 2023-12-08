@@ -27,7 +27,7 @@ public class ProductConverterImpl implements ProductConverter {
             product = factory.createAccessory(accessory.getId(), accessory.getName(), accessory.getDescription(), accessory.getStatus(), accessory.getPrice(), FilesConverter.mapToFiles(accessory.getFiles()), accessory.getAccessorySpecificField());
             return product;
         }
-        throw new IllegalArgumentException("Theatre not found");
+        throw new IllegalArgumentException("Product not found");
     }
 
     @Override

@@ -38,7 +38,12 @@ public class ProductController {
         return this.inputBoundary.create(requestModel);
     }
 
-    @GetMapping("{name}")
+    @GetMapping
+    public GetProductResponseModel getAllProducts() throws ProductCustomException{
+        return this.inputBoundary.getAllProducts();
+    }
+
+    @GetMapping("/mapping/{name}")
     public GetProductResponseModel findByProductName(@PathVariable("name") String name) throws ProductCustomException {
         return this.inputBoundary.findProductByName(name);
     }
@@ -56,8 +61,8 @@ public class ProductController {
     }
 
     @GetMapping("{id}")
-    public GetProductbyIdResponseModel findByProductName(@PathVariable("id") Long id) {
-        return this.inputBoundary.getProductbyId(id);
+    public GetProductbyIdResponseModel findByProductId(@PathVariable("id") Long id) {
+        return this.inputBoundary.getProductById(id);
     }
 
     @GetMapping("/filter/{id}")

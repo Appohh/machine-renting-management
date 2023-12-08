@@ -95,8 +95,8 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public GetProductbyIdResponseModel getProductbyId(Long id){
-        IProduct product = gateway.getProductbyId(id);
+    public GetProductbyIdResponseModel getProductById(Long id){
+        IProduct product = gateway.getProductById(id);
         return new GetProductbyIdResponseModel(product);
     }
 
@@ -104,5 +104,18 @@ public class ProductService implements IProductService {
     public FilterMachineResponseModel getMachineByCategory (Integer categoryId){
         List<IProduct> products = gateway.getMachineByCategory(categoryId);
         return new FilterMachineResponseModel(products);
+    }
+
+    @Override
+    public GetProductResponseModel getAllProducts () throws ProductCustomException{
+        try{
+            List<IProduct> products = gateway.getAllProducts();
+            return new GetProductResponseModel(products);
+        }
+        catch (Exception e){
+            throw new ProductCustomException("Problem with finding products");
+        }
+
+
     }
 }

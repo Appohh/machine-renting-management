@@ -11,6 +11,8 @@ public interface IProductRepo extends IProductExistsGateway{
     List<IProduct> findProductByName(String name);
     IProduct update(IProduct product);
 
-    IProduct getProductbyId(Long id);
+    IProduct getProductById(Long id);
     List <IProduct> getMachineByCategory (Integer categoryId);
+
+    List<IProduct> getAllProducts();
 }

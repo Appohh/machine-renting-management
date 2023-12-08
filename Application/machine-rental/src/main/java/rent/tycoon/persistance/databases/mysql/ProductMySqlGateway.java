@@ -23,7 +23,7 @@ public class ProductMySqlGateway implements IProductRepo {
     private final ICategoryRepository categoryRepository;
     private final ProductConverter productConverter;
     @Autowired
-    public ProductMySqlGateway(rent.tycoon.persistance.repositories.IProductRepository repository, IProductFactory factory, ICategoryRepository categoryRepository, ProductConverter productConverter) {
+    public ProductMySqlGateway(IProductRepository repository, IProductFactory factory, ICategoryRepository categoryRepository, ProductConverter productConverter) {
         this.repository = repository;
         this.factory = factory;
         this.categoryRepository = categoryRepository;
@@ -77,14 +77,9 @@ public class ProductMySqlGateway implements IProductRepo {
     }
 
     @Override
-    public IProduct getProductbyId(Long id){
-        List<ProductJpaMapper> jpaProducts = repository.findAll();
-        List<IProduct> products = productConverter.toListOfProduct(jpaProducts, factory);
-        for(IProduct product : products){
-            if(product.getId()==id) {
-                return product;
-            }
-        }return null;
+    public IProduct getProductById(Long id){
+        ProductJpaMapper jpaProducts = repository.findByProductId(id);
+        return productConverter.toProduct(jpaProducts, factory);
     }
 
     private Set<CategoryJpaMapper> findCategoriesByIds(IProduct iProduct) {
@@ -98,6 +93,12 @@ public class ProductMySqlGateway implements IProductRepo {
         }
 
         return categoryJpaMappers;
+    }
+
+    @Override
+    public List<IProduct> getAllProducts(){
+        List <ProductJpaMapper> jpaProducts = repository.findAll();
+        return productConverter.toListOfProduct(jpaProducts, factory);
     }
 
     //    public List<Category> findCategoryById(List<Integer> categoryIds) {
