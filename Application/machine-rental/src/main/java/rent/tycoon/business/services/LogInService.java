@@ -25,7 +25,7 @@ public class LogInService {
     //Login
     public LogInResponseModel logIn(LogInRequestModel requestModel)
     {
-        UserJpaMapper userJpaMapper = userRepository.findUserJpaMapperByEmail(requestModel.getEmail());
+        UserJpaMapper userJpaMapper = userRepository.findUserJpaMapperByEmail(requestModel.getEmailAddress());
 
         if (userJpaMapper == null)
         {

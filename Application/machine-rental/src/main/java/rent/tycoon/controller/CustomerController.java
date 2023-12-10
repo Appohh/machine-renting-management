@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import rent.tycoon.business.model.request.customer.CreateCustomerRequestModel;
 import rent.tycoon.business.model.response.customer.CreateCustomerResponseModel;
 import rent.tycoon.business.model.response.customer.GetAllCustomerResponseModel;
+import rent.tycoon.business.model.response.customer.GetCustomerResponseModel;
 import rent.tycoon.business.services.CustomerService;
 
 @RestController
@@ -34,5 +35,10 @@ public class CustomerController {
         CreateCustomerResponseModel responseModel = customerService.createCustomer(requestModel);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseModel);
+    }
+
+    @GetMapping("/byId/{id}")
+    public GetCustomerResponseModel getUserById (@PathVariable("id") long id){
+        return this.customerService.getUserById(id);
     }
 }

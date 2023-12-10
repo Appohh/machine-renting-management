@@ -1,11 +1,15 @@
 package rent.tycoon.persistance.config.security.token.impl;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwt;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import rent.tycoon.persistance.config.security.exception.InvalidAccessTokenException;
 import rent.tycoon.persistance.config.security.token.AccessToken;
 import rent.tycoon.persistance.config.security.token.AccessTokenDecoder;
 import rent.tycoon.persistance.config.security.token.AccessTokenEncoder;
@@ -15,6 +19,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -54,8 +59,20 @@ public class AccessTokenEncoderDecoderImpl implements AccessTokenEncoder, Access
 
 
     @Override
-    public AccessToken decode(String accessTokenEncoded) {
-        return null;
-    }
+    public AccessToken decode(String accessTokenEncoded){
 
+     try {
+        Jwt<?, Claims> jwt = Jwts.parserBuilder().setSigningKey(key).build()
+                .parseClaimsJws(accessTokenEncoded);
+        Claims claims = jwt.getBody();
+
+        List<String> roles = claims.get("roles", List.class);
+        int userId = claims.get("userId", Integer.class);
+
+        return new AccessTokenImpl(claims.getSubject(), userId, roles);
+    } catch (
+    JwtException e) {
+        throw new InvalidAccessTokenException(e.getMessage());
+    }
+    }
 }

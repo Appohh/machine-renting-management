@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import rent.tycoon.business.model.request.customer.CreateCustomerRequestModel;
 import rent.tycoon.business.model.response.customer.CreateCustomerResponseModel;
 import rent.tycoon.business.model.response.customer.GetAllCustomerResponseModel;
+import rent.tycoon.business.model.response.customer.GetCustomerResponseModel;
 import rent.tycoon.domain.Customer;
 import rent.tycoon.persistance.converter.CustomerConverter;
 import rent.tycoon.persistance.databases.entity.User.UserJpaMapper;
@@ -68,7 +69,6 @@ public class CustomerService {
     public GetAllCustomerResponseModel getAllCustomer()
     {
         List<UserJpaMapper> userJpaMappers;
-
         userJpaMappers = userRepositroy.findAll();
 
         List<Customer> customers = userJpaMappers
@@ -77,6 +77,16 @@ public class CustomerService {
                 .toList();
 
         return GetAllCustomerResponseModel.builder().customers(customers).build();
+    }
+
+    public GetCustomerResponseModel getUserById(Long id){
+        UserJpaMapper userJpaMapper;
+
+        userJpaMapper = userRepositroy.findUserById(id);
+
+        Customer customer = CustomerConverter.CustomerConvert(userJpaMapper);
+
+        return GetCustomerResponseModel.builder().user(customer).build();
     }
 
 }

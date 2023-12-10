@@ -20,13 +20,6 @@ import rent.tycoon.persistance.config.security.auth.AuthenticationRequestFilter;
 @Configuration
 public class WebSecurityConfig {
 
-    //whos allowed for access
-    private static final String[] SWAGGER_UI_RESOURCES = {
-            "/v3/api-docs/**",
-            "/swagger-resources/**",
-            "/swagger-ui.html",
-            "/swagger-ui/**"};
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity,
                                            AuthenticationEntryPoint authenticationEntryPoint,
@@ -38,10 +31,9 @@ public class WebSecurityConfig {
                         configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(registry ->
                         registry.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/customers", "/tokens").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/customers" ,"/customers/byId/{id}", "/tokens").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/customers", "/tokens").permitAll()
-                                .requestMatchers(SWAGGER_UI_RESOURCES).permitAll()                        // Swagger is also public (In "real life" it would only be public in non-production environments)
-                                .anyRequest().authenticated()                                             // Everything else --> authentication required, which is Spring security's default behaviour
+                                .anyRequest().authenticated()// Everything else --> authentication required, which is Spring security's default behaviour
                 )
                 .exceptionHandling(configure -> configure.authenticationEntryPoint(authenticationEntryPoint))
                 .addFilterBefore(authenticationRequestFilter, UsernamePasswordAuthenticationFilter.class);

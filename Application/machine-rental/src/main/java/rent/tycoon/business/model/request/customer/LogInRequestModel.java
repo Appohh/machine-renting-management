@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class LogInRequestModel {
     @NotBlank
-    private String email;
+    private String emailAddress;
     @NotBlank
     private String password;
 }

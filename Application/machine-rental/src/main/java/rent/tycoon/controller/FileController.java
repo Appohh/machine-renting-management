@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rent.tycoon.persistance.config.FileStorageProperties;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -28,8 +29,12 @@ public class FileController {
     public ResponseEntity<Resource> serveFile(@PathVariable long productId, @PathVariable String fileName) {
         String baseDir = fileStorageProperties.getUploadDir();
 
-        Path filePath = Paths.get(baseDir, "ProductNumber_" + productId, fileName);
-        Resource resource = new FileSystemResource(filePath);
+        File filePath = new File(baseDir, "ProductNumber_" + productId + File.separator + fileName);
+        Resource resource = new FileSystemResource(filePath.toPath());
+
+        System.out.println("baseDir = " + baseDir);
+        System.out.println("productId = " + productId);
+        System.out.println("fileName = " + fileName);
 
         if (resource.exists() && resource.isReadable()) {
             return ResponseEntity.ok()
