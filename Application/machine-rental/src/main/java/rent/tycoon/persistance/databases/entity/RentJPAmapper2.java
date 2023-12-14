@@ -17,7 +17,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RentJPAmapper2 {
+public class  RentJPAmapper2 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 

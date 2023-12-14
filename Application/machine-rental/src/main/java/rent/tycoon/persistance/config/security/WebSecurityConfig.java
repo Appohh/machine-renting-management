@@ -32,7 +32,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(registry ->
                         registry.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/customers" ,"/customers/byId/{id}", "/tokens").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/customers", "/tokens").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/customers", "/tokens","/customers/updateCustomer").permitAll()
                                 .anyRequest().authenticated()// Everything else --> authentication required, which is Spring security's default behaviour
                 )
                 .exceptionHandling(configure -> configure.authenticationEntryPoint(authenticationEntryPoint))

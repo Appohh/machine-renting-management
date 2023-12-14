@@ -3,6 +3,8 @@ package rent.tycoon.business.services;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import rent.tycoon.business.interfaces.repo_interfaces.IUserRepo;
+import rent.tycoon.business.interfaces.service_interfaces.ICustomerService;
 import rent.tycoon.business.model.request.customer.CreateCustomerRequestModel;
 import rent.tycoon.business.model.response.customer.CreateCustomerResponseModel;
 import rent.tycoon.business.model.response.customer.GetAllCustomerResponseModel;
@@ -20,9 +22,10 @@ import java.util.Set;
 
 @Service
 @AllArgsConstructor
-public class CustomerService {
+public class CustomerService implements ICustomerService {
 
     private final IUserRepository userRepositroy;
+    private final IUserRepo userRepo;
     private final BCryptPasswordEncoder passwordEncoder;
 
     //CreateCustomer
@@ -36,7 +39,7 @@ public class CustomerService {
                 .build();
     }
 
-    private UserJpaMapper saveCustomer(CreateCustomerRequestModel requestModel)
+    public UserJpaMapper saveCustomer(CreateCustomerRequestModel requestModel)
     {
         String hashedPassword = passwordEncoder.encode(requestModel.getPassword());
 
@@ -63,7 +66,9 @@ public class CustomerService {
 
         return userRepositroy.save(newCustomer);
     }
-
+    public Customer UpdateUserDetails(Long id, String firstName, String lastName, Date birthDate, String address, String city, String email, int phone){
+        return userRepo.updateUserDetails(id, firstName, lastName, birthDate, address, city, email, phone);
+    }
     //GetAllCustomer
     //TODO: Change to get users with the specific role
     public GetAllCustomerResponseModel getAllCustomer()
