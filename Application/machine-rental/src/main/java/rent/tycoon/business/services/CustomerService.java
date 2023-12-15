@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import rent.tycoon.business.interfaces.repo_interfaces.IUserRepo;
 import rent.tycoon.business.interfaces.service_interfaces.ICustomerService;
 import rent.tycoon.business.model.request.customer.CreateCustomerRequestModel;
+import rent.tycoon.business.model.request.customer.UpdateCustomerRequestModel;
 import rent.tycoon.business.model.response.customer.CreateCustomerResponseModel;
 import rent.tycoon.business.model.response.customer.GetAllCustomerResponseModel;
 import rent.tycoon.business.model.response.customer.GetCustomerResponseModel;
@@ -66,8 +67,8 @@ public class CustomerService implements ICustomerService {
 
         return userRepositroy.save(newCustomer);
     }
-    public Customer UpdateUserDetails(Long id, String firstName, String lastName, Date birthDate, String address, String city, String email, int phone){
-        return userRepo.updateUserDetails(id, firstName, lastName, birthDate, address, city, email, phone);
+    public Customer UpdateUserDetails(UpdateCustomerRequestModel requestModel){
+        return userRepo.updateUserDetails(requestModel.getId(), requestModel.getFirstName(), requestModel.getLastName(), requestModel.getBirthDate(), requestModel.getAddress(), requestModel.getCity(), requestModel.getEmail(), requestModel.getPhone());
     }
     //GetAllCustomer
     //TODO: Change to get users with the specific role

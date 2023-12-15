@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rent.tycoon.business.interfaces.service_interfaces.ICustomerService;
 import rent.tycoon.business.model.request.customer.CreateCustomerRequestModel;
+import rent.tycoon.business.model.request.customer.UpdateCustomerRequestModel;
 import rent.tycoon.business.model.response.customer.CreateCustomerResponseModel;
 import rent.tycoon.business.model.response.customer.GetAllCustomerResponseModel;
 import rent.tycoon.business.model.response.customer.GetCustomerResponseModel;
@@ -46,7 +47,7 @@ public class CustomerController {
         return this.customerService.getUserById(id);
     }
     @PostMapping("/updateCustomer")
-    public Customer updateCustomerCredentials(@RequestParam Long id, @RequestParam String firstName,@RequestParam String lastName,@RequestParam Date birthDate,@RequestParam String address,@RequestParam String city,@RequestParam String email,@RequestParam int phone){
-        return customerService.UpdateUserDetails(id, firstName,lastName,birthDate,address,city,email,phone);
+    public Customer updateCustomerCredentials(@RequestBody UpdateCustomerRequestModel requestModel){
+        return customerService.UpdateUserDetails(requestModel);
     }
 }
