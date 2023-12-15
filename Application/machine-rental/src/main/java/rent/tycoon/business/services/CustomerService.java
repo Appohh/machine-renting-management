@@ -64,11 +64,10 @@ public class CustomerService implements ICustomerService {
                         .user(newCustomer)
                         .role(UserRoles.Customer)
                         .build()));
-
         return userRepositroy.save(newCustomer);
     }
     public Customer UpdateUserDetails(UpdateCustomerRequestModel requestModel){
-        return userRepo.updateUserDetails(requestModel.getId(), requestModel.getFirstName(), requestModel.getLastName(), requestModel.getBirthDate(), requestModel.getAddress(), requestModel.getCity(), requestModel.getEmail(), requestModel.getPhone());
+        return userRepo.updateUserDetails(requestModel.getId(), requestModel.getFirstName(), requestModel.getLastName(), requestModel.getAddress(), requestModel.getCity(), requestModel.getEmail(), requestModel.getPhone());
     }
     //GetAllCustomer
     //TODO: Change to get users with the specific role
