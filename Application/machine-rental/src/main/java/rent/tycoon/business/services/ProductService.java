@@ -13,14 +13,13 @@ import rent.tycoon.business.model.request.product.UpdateProductRequestModel;
 import rent.tycoon.business.model.request.accessory.CreateAccessoryRequestModel;
 import rent.tycoon.business.model.request.machine.CreateMachineRequestModel;
 import rent.tycoon.business.model.request.product.CreateProductRequestModel;
-import rent.tycoon.business.model.response.*;
+import rent.tycoon.business.model.response.product.*;
 import rent.tycoon.domain.Category;
 import rent.tycoon.domain.Files;
 import rent.tycoon.domain.IProduct;
 import rent.tycoon.domain.factory.IProductFactory;
 
 import java.util.List;
-import java.util.Objects;
 
 
 @Service

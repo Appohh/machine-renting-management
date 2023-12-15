@@ -9,7 +9,7 @@ import rent.tycoon.business.model.request.accessory.CreateAccessoryRequestModel;
 import rent.tycoon.business.model.request.accessory.UpdateAccessoryRequestModel;
 import rent.tycoon.business.model.request.machine.CreateMachineRequestModel;
 import rent.tycoon.business.model.request.machine.UpdateMachineRequestModel;
-import rent.tycoon.business.model.response.*;
+import rent.tycoon.business.model.response.product.*;
 import rent.tycoon.domain.Category;
 
 import java.math.BigDecimal;
@@ -49,7 +49,7 @@ public class ProductController {
     }
 
     @PostMapping("/machine/update")
-    public UpdateProductResponseModel updateMachine(@RequestParam("id") long id,@RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("status") int status, @RequestParam("price") BigDecimal price, @RequestParam ("files") List<MultipartFile> files, @RequestParam("machineSpecificField") String machineSpecificField, Set<Integer> category) throws ProductCustomException{
+    public UpdateProductResponseModel updateMachine(@RequestParam("id") long id, @RequestParam("name") String name, @RequestParam("description") String description, @RequestParam("status") int status, @RequestParam("price") BigDecimal price, @RequestParam ("files") List<MultipartFile> files, @RequestParam("machineSpecificField") String machineSpecificField, Set<Integer> category) throws ProductCustomException{
         UpdateMachineRequestModel requestModel = new UpdateMachineRequestModel(id, name, description, status, price, files, machineSpecificField, category);
         return this.inputBoundary.update(requestModel);
     }

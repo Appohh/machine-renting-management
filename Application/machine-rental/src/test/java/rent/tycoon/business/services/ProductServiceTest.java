@@ -1,22 +1,6 @@
 package rent.tycoon.business.services;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-import org.springframework.mock.web.MockMultipartFile;
-import org.springframework.web.multipart.MultipartFile;
-import rent.tycoon.business.exeption.ProductCustomException;
-import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
-import rent.tycoon.business.model.request.machine.CreateMachineRequestModel;
-import rent.tycoon.business.model.request.product.CreateProductRequestModel;
-import rent.tycoon.business.model.response.CreateProductResponseModel;
-import rent.tycoon.domain.IProduct;
-import rent.tycoon.domain.factory.IProductFactory;
-import org.mockito.Mockito;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

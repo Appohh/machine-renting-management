@@ -13,8 +13,8 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 public class Rent2 {
-    private int id;
-    private int customerId;
+    private long id;
+    private long customerId;
     private String address;
     private String city;
     private Date timestamp;

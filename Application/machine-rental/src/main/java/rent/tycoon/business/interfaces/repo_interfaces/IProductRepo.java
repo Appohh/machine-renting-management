@@ -1,9 +1,7 @@
 package rent.tycoon.business.interfaces.repo_interfaces;
 
-import rent.tycoon.business.model.response.GetProductbyIdResponseModel;
 import rent.tycoon.domain.Category;
 import rent.tycoon.domain.IProduct;
-import rent.tycoon.domain.Machine;
 
 import java.util.List;
 

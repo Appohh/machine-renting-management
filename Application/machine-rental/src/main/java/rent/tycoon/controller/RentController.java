@@ -8,6 +8,7 @@ import rent.tycoon.business.interfaces.service_interfaces.IRentService2;
 import rent.tycoon.business.model.request.CreateRentRequest2;
 import rent.tycoon.business.model.request.CreateRentRequestModel;
 import rent.tycoon.business.model.response.CreateRentResponseModel;
+import rent.tycoon.business.model.response.GetAllRentResponseModel;
 
 
 @RestController
@@ -27,5 +28,8 @@ public class RentController {
     public CreateRentResponseModel createRent2(@Valid @RequestBody CreateRentRequest2 requestModel) throws RentCustomException {
         return this.rentService2.create(requestModel);
     }
-
+    @GetMapping("{customer_id}")
+    public GetAllRentResponseModel getAllRents(@PathVariable("customer_id") long customerId)  throws RentCustomException{
+        return this.rentService2.getAllRents(customerId);
+    }
 }

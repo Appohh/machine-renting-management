@@ -1,4 +1,4 @@
-package rent.tycoon.business.model.response;
+package rent.tycoon.business.model.response.product;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
