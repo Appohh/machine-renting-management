@@ -3,10 +3,13 @@ package rent.tycoon.persistance.databases.mysql;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import rent.tycoon.domain.Category;
 import rent.tycoon.domain.Machine;
 import rent.tycoon.persistance.converter.CreateProductConverter;
 import rent.tycoon.persistance.converter.ProductConverter;
+import rent.tycoon.persistance.databases.entity.AccessoryJpaMapper;
 import rent.tycoon.persistance.databases.entity.CategoryJpaMapper;
+import rent.tycoon.persistance.databases.entity.MachineJpaMapper;
 import rent.tycoon.persistance.databases.entity.ProductJpaMapper;
 import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
 import rent.tycoon.domain.IProduct;
@@ -99,6 +102,11 @@ public class ProductMySqlGateway implements IProductRepo {
     public List<IProduct> getAllProducts(){
         List <ProductJpaMapper> jpaProducts = repository.findAll();
         return productConverter.toListOfProduct(jpaProducts, factory);
+    }
+    @Transactional
+    public List<IProduct> filterProduct(String name, int price, Category category) {
+        List<MachineJpaMapper> machineJPAmappers = repository.findMachinesByFilter(name, price, category.getName());
+        return productConverter.convertMachine(machineJPAmappers);
     }
 
     //    public List<Category> findCategoryById(List<Integer> categoryIds) {

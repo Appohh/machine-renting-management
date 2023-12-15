@@ -14,6 +14,7 @@ import rent.tycoon.business.model.request.accessory.CreateAccessoryRequestModel;
 import rent.tycoon.business.model.request.machine.CreateMachineRequestModel;
 import rent.tycoon.business.model.request.product.CreateProductRequestModel;
 import rent.tycoon.business.model.response.*;
+import rent.tycoon.domain.Category;
 import rent.tycoon.domain.Files;
 import rent.tycoon.domain.IProduct;
 import rent.tycoon.domain.factory.IProductFactory;
@@ -116,6 +117,17 @@ public class ProductService implements IProductService {
             throw new ProductCustomException("Problem with finding products");
         }
 
+
+    }
+    @Override
+    public GetProductResponseModel filterProduct(String name, int price, Category category){
+        try{
+            List<IProduct> products= gateway.filterProduct(name, price, category);
+            return new GetProductResponseModel(products);
+        }
+        catch (Exception e){
+            throw new IllegalArgumentException("Something went wrong");
+        }
 
     }
 }

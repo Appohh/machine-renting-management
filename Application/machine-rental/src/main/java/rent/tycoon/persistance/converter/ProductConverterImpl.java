@@ -11,6 +11,7 @@ import rent.tycoon.persistance.databases.entity.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static rent.tycoon.persistance.converter.CategoryConverter.mapCategoryJpaMappers;
 
@@ -84,5 +85,20 @@ public class ProductConverterImpl implements ProductConverter {
             }
         }
         return newFiles;
+    }
+    @Override
+    public List<IProduct> convertMachine(List<MachineJpaMapper> machineJPAmappers) {
+        return machineJPAmappers.stream()
+                .map(mapper -> new Machine(
+                        mapper.getId(),
+                        mapper.getName(),
+                        mapper.getDescription(),
+                        mapper.getStatus(),
+                        mapper.getPrice(),
+                        FilesConverter.mapToFiles(mapper.getFiles()),
+                        mapper.getMachineSpecificField(),
+                        mapper.getCategories().stream().map(CategoryJpaMapper::getId).collect(Collectors.toSet())
+                ))
+                .collect(Collectors.toList());
     }
 }

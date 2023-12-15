@@ -4,6 +4,7 @@ import rent.tycoon.business.exeption.ProductCustomException;
 import rent.tycoon.business.model.request.product.CreateProductRequestModel;
 import rent.tycoon.business.model.request.product.UpdateProductRequestModel;
 import rent.tycoon.business.model.response.*;
+import rent.tycoon.domain.Category;
 
 public interface IProductService {
     CreateProductResponseModel create(CreateProductRequestModel requestModel) throws ProductCustomException;
@@ -14,4 +15,5 @@ public interface IProductService {
     FilterMachineResponseModel getMachineByCategory (Integer categoryId);
 
     GetProductResponseModel getAllProducts () throws ProductCustomException;
+    GetProductResponseModel filterProduct(String name, int price, Category category);
 }

@@ -69,6 +69,14 @@ public class ProductController {
     public FilterMachineResponseModel findMachineByCategory(@PathVariable("id") Integer id){
         return this.inputBoundary.getMachineByCategory(id);
     }
+    @GetMapping("/filterMachine")
+    public GetProductResponseModel filterMachine(@RequestParam(required = false) String name,
+                                                 @RequestParam(required = false) int price,
+                                                 @RequestParam(required = false) Category category)
+    {
+        return this.inputBoundary.filterProduct(name, price, category);
+    }
+
 
 }
 
