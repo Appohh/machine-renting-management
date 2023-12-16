@@ -10,6 +10,8 @@ import rent.tycoon.business.model.request.CreateRentRequestModel;
 import rent.tycoon.business.model.response.CreateRentResponseModel;
 import rent.tycoon.business.model.response.GetAllRentResponseModel;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/rent")

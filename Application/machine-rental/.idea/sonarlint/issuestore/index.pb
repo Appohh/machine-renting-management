@@ -151,3 +151,13 @@ Fsrc/main/java/rent/tycoon/persistance/converter/CustomerConverter.java,d\4\d4e
 Ksrc/main/java/rent/tycoon/persistance/databases/mysql/UserMySqlGateway.java,d\4\d4710c09e8ddc4295f8d9b5be8bbf13848590a93
 l
 <src/main/java/rent/tycoon/controller/CustomerController.java,d\d\ddae48d2b50d669f7ad27ea77e0af2bfe0c6013c
+m
+=src/main/java/rent/tycoon/business/services/LogInService.java,d\b\dbe19079964b92cc66f22af2487dbe07789ed1a8
+i
+9src/main/java/rent/tycoon/controller/LogInController.java,5\e\5eeb3e7331cf84bfa23b33f93419e8ff0b53f66e
+h
+8src/main/java/rent/tycoon/domain/RentProductWrapper.java,a\8\a8a725b1fbf5e60392a1fee0a382f53cd3f340e9
+z
+Jsrc/main/java/rent/tycoon/persistance/repositories/IRentRowRepository.java,a\6\a609c109b8749c7365b136b71b390a30e21ef8db
+z
+Jsrc/main/java/rent/tycoon/persistance/databases/entity/RentJPAmapper2.java,b\2\b2f4c4e09dbd1481d29255936b6cb98b8c81f0f3

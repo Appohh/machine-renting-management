@@ -9,10 +9,7 @@ import rent.tycoon.business.model.request.CreateRentRequest2;
 import rent.tycoon.business.model.request.CreateRentRequestModel;
 import rent.tycoon.business.model.response.CreateRentResponseModel;
 import rent.tycoon.business.model.response.GetAllRentResponseModel;
-import rent.tycoon.domain.IProduct;
-import rent.tycoon.domain.Rent;
-import rent.tycoon.domain.Rent2;
-import rent.tycoon.domain.RentRow;
+import rent.tycoon.domain.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -37,10 +34,17 @@ public class RentService2 implements IRentService2 {
     }
 
     @Override
-    public GetAllRentResponseModel getAllRents (long customerId) throws RentCustomException{
-        Map<Rent2, IProduct> rentAndProduct = repo.getRentsAndProductsByCustomerId(customerId);
-        return GetAllRentResponseModel.builder()
-                .rentProductMap(rentAndProduct)
-                .build();
+    public GetAllRentResponseModel getAllRents(long customerId) throws RentCustomException {
+        List<RentProductWrapper> rentProductList = new ArrayList<>();
+        List<Rent2> rents = repo.getRentsByCustomerId(customerId);
+
+        for (Rent2 rent : rents) {
+            IProduct product = repo.getProductByRent(rent.getId());
+
+            RentProductWrapper rentProductWrapper = new RentProductWrapper(rent, product);
+            rentProductList.add(rentProductWrapper);
+        }
+
+        return new GetAllRentResponseModel(rentProductList);
     }
 }

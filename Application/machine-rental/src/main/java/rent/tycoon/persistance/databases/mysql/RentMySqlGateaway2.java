@@ -13,6 +13,7 @@ import rent.tycoon.persistance.databases.entity.ProductJpaMapper;
 import rent.tycoon.persistance.databases.entity.RentJPAmapper2;
 import rent.tycoon.persistance.repositories.IRentRepository2;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,20 +40,20 @@ public class RentMySqlGateaway2 implements IRentRepo2{
         return repository.save(rentJpaMapper).getId();
     }
 
-    public Map<Rent2, IProduct> getRentsAndProductsByCustomerId(long customerId) {
-        List<Object[]> rentAndProductObjects = repository.findRentAndProductByCustomerId(customerId);
-        Map<Rent2, IProduct> rentProductMap = new HashMap<>();
+    public List <Rent2> getRentsByCustomerId(long customerId) {
+        List<RentJPAmapper2> rentJPAMapper2s = repository.findRentByCustomerId(customerId);
+        List <Rent2> rents = new ArrayList<>();
 
-        for (Object[] objects : rentAndProductObjects) {
-            RentJPAmapper2 rentJPAmapper2 = (RentJPAmapper2) objects[0];
-            ProductJpaMapper productJpaMapper = (ProductJpaMapper) objects[1];
-
+        for (RentJPAmapper2 rentJPAmapper2 : rentJPAMapper2s) {
             Rent2 rent = rentConverter.toRent(rentJPAmapper2);
-            IProduct product = productConverter.toProduct(productJpaMapper, factory);
-
-            rentProductMap.put(rent, product);
+            rents.add(rent);
         }
 
-        return rentProductMap;
+        return rents;
+    }
+
+    public IProduct getProductByRent (long rentId){
+        ProductJpaMapper productJpaMapper = repository.findProductByRentId(rentId);
+        return productConverter.toProduct(productJpaMapper, factory);
     }
 }

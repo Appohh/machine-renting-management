@@ -1,19 +1,18 @@
 package rent.tycoon.business.model.response;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import rent.tycoon.domain.IProduct;
 import rent.tycoon.domain.Rent2;
+import rent.tycoon.domain.RentProductWrapper;
 
+import java.util.List;
 import java.util.Map;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 @Builder
 public class GetAllRentResponseModel {
-    private Map<Rent2, IProduct> rentProductMap;
-
+    private List<RentProductWrapper> rentProductList;
 }
