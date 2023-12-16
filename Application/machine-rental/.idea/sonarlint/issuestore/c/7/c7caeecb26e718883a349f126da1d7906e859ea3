@@ -1,0 +1,11 @@
+
+x
+java:S1128	"VRemove this unused import 'rent.tycoon.business.model.request.CreateRentRequestModel'.(Šª±½ıÿÿÿÿ8ÜğÿôÆ1
+V
+java:S1128"4Remove this unused import 'rent.tycoon.domain.Rent'.(üÇà´øÿÿÿÿ8ÜğÿôÆ1
+Y
+java:S1128"7Remove this unused import 'rent.tycoon.domain.RentRow'.(ö•çüÿÿÿÿ8ÜğÿôÆ1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÜğÿôÆ1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÜğÿôÆ1
