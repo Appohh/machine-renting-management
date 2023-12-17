@@ -20,13 +20,14 @@ public class UserMySqlGateway implements IUserRepo {
     public UserMySqlGateway (IUserRepository userRepository){
         this.userRepository = userRepository;
     }
-    public Customer updateUserDetails(long id, String firstName, String lastName, String address, String city, String email, int phone) {
+    public Customer updateUserDetails(long id, String firstName, String lastName,Date birthDate, String address, String city, String email, int phone) {
         // Find the user by ID
         UserJpaMapper user = userRepository.findUserById(id);
 
         if (user!=null) {
             user.setFirstName(firstName);
             user.setLastName(lastName);
+            user.setBirthDate(birthDate);
             user.setAddress(address);
             user.setCity(city);
             user.setEmail(email);

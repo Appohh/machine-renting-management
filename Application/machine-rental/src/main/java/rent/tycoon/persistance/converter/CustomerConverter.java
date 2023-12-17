@@ -11,6 +11,7 @@ public class CustomerConverter {
                 .id(user.getId())
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
+                .birthdate(user.getBirthDate())
                 .address(user.getAddress())
                 .city(user.getCity())
                 .email(user.getEmail())
