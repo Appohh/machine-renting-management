@@ -20,6 +20,8 @@ import rent.tycoon.persistance.config.security.auth.AuthenticationRequestFilter;
 @Configuration
 public class WebSecurityConfig {
 
+    private static final String RENT_ENDPOINT = "/rent";
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity,
                                            AuthenticationEntryPoint authenticationEntryPoint,
@@ -31,9 +33,10 @@ public class WebSecurityConfig {
                         configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(registry ->
                         registry.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/customers" ,"/customers/byId/{id}", "/tokens").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/customers", "/tokens","/customers/updateCustomer").permitAll()
-                                .anyRequest().authenticated()// Everything else --> authentication required, which is Spring security's default behaviour
+                                .requestMatchers(HttpMethod.GET, RENT_ENDPOINT, RENT_ENDPOINT + "/{customer_id}").authenticated()
+                                .requestMatchers(HttpMethod.POST, RENT_ENDPOINT).authenticated()
+                                .requestMatchers(HttpMethod.PUT, RENT_ENDPOINT).authenticated()
+                                .anyRequest().permitAll()
                 )
                 .exceptionHandling(configure -> configure.authenticationEntryPoint(authenticationEntryPoint))
                 .addFilterBefore(authenticationRequestFilter, UsernamePasswordAuthenticationFilter.class);

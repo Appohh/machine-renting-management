@@ -32,10 +32,6 @@ public class FileController {
         File filePath = new File(baseDir, "ProductNumber_" + productId + File.separator + fileName);
         Resource resource = new FileSystemResource(filePath.toPath());
 
-        System.out.println("baseDir = " + baseDir);
-        System.out.println("productId = " + productId);
-        System.out.println("fileName = " + fileName);
-
         if (resource.exists() && resource.isReadable()) {
             return ResponseEntity.ok()
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_OCTET_STREAM_VALUE)
