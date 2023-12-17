@@ -15,7 +15,6 @@ public class UpdateCustomerRequestModel {
     long id;
     String firstName ;
     String lastName;
-    Date birthDate;
     String address ;
     String city;
     String email;
