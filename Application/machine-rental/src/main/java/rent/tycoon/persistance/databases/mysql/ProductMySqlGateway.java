@@ -104,8 +104,8 @@ public class ProductMySqlGateway implements IProductRepo {
         return productConverter.toListOfProduct(jpaProducts, factory);
     }
     @Transactional
-    public List<IProduct> filterProduct(String name, int price, Category category) {
-        List<MachineJpaMapper> machineJPAmappers = repository.findMachinesByFilter(name, price, category.getName());
+    public List<IProduct> filterProduct(String name, int price, long category) {
+        List<MachineJpaMapper> machineJPAmappers = repository.findMachinesByFilter(name, price, category);
         return productConverter.convertMachine(machineJPAmappers);
     }
 

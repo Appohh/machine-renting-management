@@ -72,11 +72,8 @@ public class ProductController {
     @GetMapping("/filterMachine")
     public GetProductResponseModel filterMachine(@RequestParam(required = false) String name,
                                                  @RequestParam(required = false) int price,
-                                                 @RequestParam(required = false) Category category)
-    {
+                                                 @RequestParam(required = false) long category) {
         return this.inputBoundary.filterProduct(name, price, category);
     }
-
-
 }
 

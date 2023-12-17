@@ -28,11 +28,11 @@ public interface IProductRepository extends JpaRepository<ProductJpaMapper, Stri
             "JOIN m.categories c " +
             "WHERE (:name IS NULL OR LOWER(m.name) LIKE LOWER(CONCAT('%', :name, '%'))) " +
             "AND (:price IS NULL OR m.price <= :price) " +
-            "AND (:category IS NULL OR LOWER(c.name) LIKE LOWER(CONCAT('%', :category, '%')))")
+            "AND (:category IS NULL OR LOWER(c.id) LIKE LOWER(CONCAT('%', :category, '%')))")
     List<MachineJpaMapper> findMachinesByFilter(
             @Param("name") String name,
             @Param("price") Integer price,
-            @Param("category") String category
+            @Param("category") long category
     );
 
 

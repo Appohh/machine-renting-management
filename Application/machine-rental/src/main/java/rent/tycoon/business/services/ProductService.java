@@ -119,7 +119,7 @@ public class ProductService implements IProductService {
 
     }
     @Override
-    public GetProductResponseModel filterProduct(String name, int price, Category category){
+    public GetProductResponseModel filterProduct(String name, int price, long category){
         try{
             List<IProduct> products= gateway.filterProduct(name, price, category);
             return new GetProductResponseModel(products);

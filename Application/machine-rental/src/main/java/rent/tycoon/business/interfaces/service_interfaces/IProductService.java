@@ -15,5 +15,5 @@ public interface IProductService {
     FilterMachineResponseModel getMachineByCategory (Integer categoryId);
 
     GetProductResponseModel getAllProducts () throws ProductCustomException;
-    GetProductResponseModel filterProduct(String name, int price, Category category);
+    GetProductResponseModel filterProduct(String name, int price, long category);
 }

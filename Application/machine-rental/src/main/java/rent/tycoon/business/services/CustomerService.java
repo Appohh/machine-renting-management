@@ -48,7 +48,6 @@ public class CustomerService implements ICustomerService {
                 .builder()
                 .firstName(requestModel.getFirstName())
                 .lastName(requestModel.getLastName())
-                .birthDate(requestModel.getBirthdate())
                 .address(requestModel.getAddress())
                 .city(requestModel.getCity())
                 .email(requestModel.getEmail())
