@@ -27,7 +27,6 @@ public class UserMySqlGateway implements IUserRepo {
         if (user!=null) {
             user.setFirstName(firstName);
             user.setLastName(lastName);
-
             user.setAddress(address);
             user.setCity(city);
             user.setEmail(email);

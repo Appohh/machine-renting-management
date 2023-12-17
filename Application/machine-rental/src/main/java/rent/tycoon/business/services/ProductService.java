@@ -17,9 +17,15 @@ import rent.tycoon.business.model.response.product.*;
 import rent.tycoon.domain.Category;
 import rent.tycoon.domain.Files;
 import rent.tycoon.domain.IProduct;
+import rent.tycoon.domain.Machine;
 import rent.tycoon.domain.factory.IProductFactory;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -129,4 +135,26 @@ public class ProductService implements IProductService {
         }
 
     }
+
+    public GetProductResponseModel filterAndSortProducts(String name, BigDecimal maxPrice, Integer category) {
+        List<IProduct> products;
+        if (category == null) {
+            products = gateway.getAllProducts();
+        } else {
+            products = gateway.getMachineByCategory(category);
+        }
+
+        List<IProduct> filteredAndSortedProducts = products.stream()
+                .filter(product -> product.getName().contains(name))
+                .filter(product -> product.getPrice().compareTo(maxPrice) <= 0)
+                .sorted(Comparator.comparing(IProduct::getName)
+                        .thenComparing(IProduct::getPrice))
+                .collect(Collectors.toList());
+
+        return new GetProductResponseModel(filteredAndSortedProducts);
+    }
+
+
+
+
 }

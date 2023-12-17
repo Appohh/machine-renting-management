@@ -5,6 +5,11 @@ import rent.tycoon.business.model.request.product.CreateProductRequestModel;
 import rent.tycoon.business.model.request.product.UpdateProductRequestModel;
 import rent.tycoon.business.model.response.product.*;
 import rent.tycoon.domain.Category;
+import rent.tycoon.domain.IProduct;
+import rent.tycoon.domain.Machine;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 public interface IProductService {
     CreateProductResponseModel create(CreateProductRequestModel requestModel) throws ProductCustomException;
@@ -16,4 +21,7 @@ public interface IProductService {
 
     GetProductResponseModel getAllProducts () throws ProductCustomException;
     GetProductResponseModel filterProduct(String name, int price, long category);
+
+    GetProductResponseModel filterAndSortProducts(String name, BigDecimal maxPrice, Integer category);
+
 }

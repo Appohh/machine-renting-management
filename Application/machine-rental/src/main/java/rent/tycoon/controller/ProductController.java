@@ -11,6 +11,8 @@ import rent.tycoon.business.model.request.machine.CreateMachineRequestModel;
 import rent.tycoon.business.model.request.machine.UpdateMachineRequestModel;
 import rent.tycoon.business.model.response.product.*;
 import rent.tycoon.domain.Category;
+import rent.tycoon.domain.IProduct;
+import rent.tycoon.domain.Machine;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -71,9 +73,9 @@ public class ProductController {
     }
     @GetMapping("/filterMachine")
     public GetProductResponseModel filterMachine(@RequestParam(required = false) String name,
-                                                 @RequestParam(required = false) int price,
-                                                 @RequestParam(required = false) long category) {
-        return this.inputBoundary.filterProduct(name, price, category);
+                                       @RequestParam(required = false) BigDecimal price,
+                                       @RequestParam(required = false) Integer category) {
+        return this.inputBoundary.filterAndSortProducts(name, price, category);
     }
 }
 
