@@ -138,7 +138,7 @@ public class ProductService implements IProductService {
 
     public GetProductResponseModel filterAndSortProducts(String name, BigDecimal maxPrice, Integer category) {
         List<IProduct> products;
-        if (category == null) {
+        if (category == null || category == 0) {
             products = gateway.getAllProducts();
         } else {
             products = gateway.getMachineByCategory(category);
