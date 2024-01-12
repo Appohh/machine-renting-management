@@ -1,3 +1,8 @@
 
 b	java:S112>"FDefine and throw a dedicated exception instead of using a generic one.(â‹‚©8 ÕèÆ1
 ]	java:S125p"<This block of commented-out lines of code should be removed.(ÁÑ²•ıÿÿÿÿ8Ù ÕèÆ1
+U
+java:S1128"8Remove this unused import 'rent.tycoon.domain.Category'.(Ãá¨æ8àƒóàÇ1
+z
+java:S1128
+"XRemove this unused import 'rent.tycoon.persistance.databases.entity.AccessoryJpaMapper'.(±¤şŞüÿÿÿÿ8àƒóàÇ1

@@ -18,18 +18,12 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RentRowJpaMapper {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter
     private long id;
+    private long productId;
     private Date startDate;
     private Date endDate;
-    @Timestamp
-    private Date timestamp;
-    private long productId;
-    @ManyToOne
-    @JoinColumn(name = "rent_id")
-    private RentJpaMapper rent;
-
+    private long rentId;
 }

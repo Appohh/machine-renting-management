@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config.security.exception;
+package rent.tycoon.config.security.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;

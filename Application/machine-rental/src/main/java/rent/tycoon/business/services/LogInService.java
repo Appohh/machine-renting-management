@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import rent.tycoon.business.exeption.InvalidCredentialsException;
 import rent.tycoon.business.model.request.customer.LogInRequestModel;
 import rent.tycoon.business.model.response.customer.LogInResponseModel;
-import rent.tycoon.persistance.config.security.token.AccessTokenEncoder;
-import rent.tycoon.persistance.config.security.token.impl.AccessTokenImpl;
+import rent.tycoon.config.security.token.AccessTokenEncoder;
+import rent.tycoon.config.security.token.impl.AccessTokenImpl;
 import rent.tycoon.persistance.databases.entity.User.UserJpaMapper;
 import rent.tycoon.persistance.repositories.IUserRepository;
 

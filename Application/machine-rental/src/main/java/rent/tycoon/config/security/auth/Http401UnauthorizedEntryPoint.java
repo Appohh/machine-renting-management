@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config.security.auth;
+package rent.tycoon.config.security.auth;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

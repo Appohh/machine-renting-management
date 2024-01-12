@@ -7,11 +7,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import rent.tycoon.persistance.config.FileStorageProperties;
+import rent.tycoon.config.FileStorageProperties;
 
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 @RestController
 @RequestMapping("/api/files")

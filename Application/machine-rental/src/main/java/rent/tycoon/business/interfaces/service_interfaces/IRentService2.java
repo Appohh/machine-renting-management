@@ -2,11 +2,8 @@ package rent.tycoon.business.interfaces.service_interfaces;
 
 import rent.tycoon.business.exeption.RentCustomException;
 import rent.tycoon.business.model.request.CreateRentRequest2;
-import rent.tycoon.business.model.request.CreateRentRequestModel;
-import rent.tycoon.business.model.response.CreateRentResponseModel;
-import rent.tycoon.business.model.response.GetAllRentResponseModel;
-
-import java.util.List;
+import rent.tycoon.business.model.response.rent.CreateRentResponseModel;
+import rent.tycoon.business.model.response.rent.GetAllRentResponseModel;
 
 public interface IRentService2 {
     CreateRentResponseModel create(CreateRentRequest2 responseModel) throws RentCustomException;

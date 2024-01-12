@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config.security.token.impl;
+package rent.tycoon.config.security.token.impl;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwt;
@@ -9,10 +9,10 @@ import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-import rent.tycoon.persistance.config.security.exception.InvalidAccessTokenException;
-import rent.tycoon.persistance.config.security.token.AccessToken;
-import rent.tycoon.persistance.config.security.token.AccessTokenDecoder;
-import rent.tycoon.persistance.config.security.token.AccessTokenEncoder;
+import rent.tycoon.config.security.exception.InvalidAccessTokenException;
+import rent.tycoon.config.security.token.AccessToken;
+import rent.tycoon.config.security.token.AccessTokenDecoder;
+import rent.tycoon.config.security.token.AccessTokenEncoder;
 
 import java.security.Key;
 import java.time.Instant;

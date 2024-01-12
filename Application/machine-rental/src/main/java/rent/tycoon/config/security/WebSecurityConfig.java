@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config.security;
+package rent.tycoon.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import rent.tycoon.persistance.config.security.auth.AuthenticationRequestFilter;
+import rent.tycoon.config.security.auth.AuthenticationRequestFilter;
 
 @EnableWebSecurity
 @EnableMethodSecurity(jsr250Enabled = true)

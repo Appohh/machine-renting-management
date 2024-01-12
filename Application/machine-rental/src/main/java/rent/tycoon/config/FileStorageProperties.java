@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config;
+package rent.tycoon.config;
 
 import lombok.Getter;
 import lombok.Setter;

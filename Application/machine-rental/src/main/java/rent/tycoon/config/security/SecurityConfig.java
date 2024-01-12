@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config.security;
+package rent.tycoon.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

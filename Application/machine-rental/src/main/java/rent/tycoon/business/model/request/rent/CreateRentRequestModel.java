@@ -1,4 +1,4 @@
-package rent.tycoon.business.model.request;
+package rent.tycoon.business.model.request.rent;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,12 +15,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateRentRequestModel {
-    private int customerId;
+    private long customerId;
     private String address;
     private String city;
-    private Date timestamp;
     private BigDecimal total;
     private BigDecimal discount;
-    private int paid;
-    private List<RentRow>rows;
 }

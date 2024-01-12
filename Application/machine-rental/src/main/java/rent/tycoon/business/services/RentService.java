@@ -5,14 +5,18 @@ import org.springframework.stereotype.Service;
 import rent.tycoon.business.interfaces.service_interfaces.IRentService;
 import rent.tycoon.business.interfaces.repo_interfaces.IRentRepo;
 import rent.tycoon.business.exeption.RentCustomException;
-import rent.tycoon.business.model.request.CreateRentRequestModel;
-import rent.tycoon.business.model.response.CreateRentResponseModel;
-import rent.tycoon.domain.Rent;
-import rent.tycoon.domain.RentRow;
+import rent.tycoon.business.model.request.rent.AddRentRowRequestModel;
+import rent.tycoon.business.model.request.rent.CreateRentRequestModel;
+import rent.tycoon.business.model.response.rent.AddRentRowResponseModel;
+import rent.tycoon.business.model.response.rent.CreateRentResponseModel;
+import rent.tycoon.business.model.response.rent.GetAllRentResponseModel;
+import rent.tycoon.domain.*;
 
+import java.lang.ref.ReferenceQueue;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -23,13 +27,11 @@ public class RentService implements IRentService {
     public CreateRentResponseModel create(CreateRentRequestModel requestModel) throws RentCustomException{
 
         //ff test
-        if (requestModel.getTotal() == null) {
-            throw new RentCustomException("Product with total is null");
+        if (requestModel.getCustomerId() == 0) {
+            throw new RentCustomException("Customer has invalid id");
         }
 
-        List<RentRow> rows = new ArrayList<>(requestModel.getRows());
-
-        Rent rent = new Rent(0, requestModel.getCustomerId(), requestModel.getAddress(), requestModel.getCity(), new Date(), requestModel.getTotal(), requestModel.getDiscount(), 0,rows);
+        Rent rent = new Rent(0, requestModel.getCustomerId(), requestModel.getAddress(), requestModel.getCity(), new Date(), requestModel.getTotal(), requestModel.getDiscount(), 0);
 
         long id = gateway.save(rent);
 
@@ -37,4 +39,42 @@ public class RentService implements IRentService {
                 .rentId(id)
                 .build();
     }
+
+    public Boolean userOwnsRent(long userId, long rentId){
+        Optional<Rent> rentOptional = gateway.findByRentId(rentId);
+
+        if (rentOptional.isPresent()) {
+            Rent rent = rentOptional.get();
+            return rent.getCustomerId() == userId;
+        }
+
+        return false;
+    }
+
+    public AddRentRowResponseModel addRentRow(AddRentRowRequestModel requestModel) throws RentCustomException{
+        RentRow rentRow = new RentRow(0, requestModel.getProductId(), requestModel.getStartDate(), requestModel.getEndDate(), requestModel.getRentId());
+        try {
+            long id = gateway.saveRentRow(rentRow);
+            return new AddRentRowResponseModel(id);
+        }catch(Exception e){
+            throw new RentCustomException("Something went wrong.");
+        }
+
+
+    }
+
+//    @Override
+//    public GetAllRentResponseModel getAllRents(long customerId) throws RentCustomException {
+//        List<RentProductWrapper> rentProductList = new ArrayList<>();
+//        List<Rent2> rents = repo.getRentsByCustomerId(customerId);
+//
+//        for (Rent2 rent : rents) {
+//            IProduct product = repo.getProductByRent(rent.getId());
+//
+//            RentProductWrapper rentProductWrapper = new RentProductWrapper(rent, product);
+//            rentProductList.add(rentProductWrapper);
+//        }
+//
+//        return new GetAllRentResponseModel(rentProductList);
+//    }
 }

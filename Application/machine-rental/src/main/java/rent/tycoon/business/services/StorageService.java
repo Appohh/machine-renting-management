@@ -3,7 +3,7 @@ package rent.tycoon.business.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import rent.tycoon.persistance.config.FileStorageProperties;
+import rent.tycoon.config.FileStorageProperties;
 
 import java.io.IOException;
 import java.nio.file.Files;

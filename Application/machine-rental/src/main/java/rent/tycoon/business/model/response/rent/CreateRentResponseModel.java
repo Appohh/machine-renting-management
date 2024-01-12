@@ -1,4 +1,4 @@
-package rent.tycoon.business.model.response;
+package rent.tycoon.business.model.response.rent;
 
 import lombok.*;
 

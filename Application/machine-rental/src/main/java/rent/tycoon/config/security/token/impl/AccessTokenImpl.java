@@ -1,8 +1,8 @@
-package rent.tycoon.persistance.config.security.token.impl;
+package rent.tycoon.config.security.token.impl;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import rent.tycoon.persistance.config.security.token.AccessToken;
+import rent.tycoon.config.security.token.AccessToken;
 
 import java.util.Collection;
 import java.util.Collections;

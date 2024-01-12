@@ -161,7 +161,9 @@ z
 Jsrc/main/java/rent/tycoon/persistance/repositories/IRentRowRepository.java,a\6\a609c109b8749c7365b136b71b390a30e21ef8db
 z
 Jsrc/main/java/rent/tycoon/persistance/databases/entity/RentJPAmapper2.java,b\2\b2f4c4e09dbd1481d29255936b6cb98b8c81f0f3
-|
-Lsrc/main/java/rent/tycoon/persistance/config/security/WebSecurityConfig.java,7\c\7c317c5d00839bdd5c235b89a8770a4012b90156
 †
 Vsrc/main/java/rent/tycoon/business/model/response/product/GetProductResponseModel.java,5\7\573fa73157b5983477d2a4b1eb717b329729c6e0
+p
+@src/main/java/rent/tycoon/config/security/WebSecurityConfig.java,a\c\acf7afcdf13df80db0b5334c4eeb35c84cd4fd19
+]
+-src/main/java/rent/tycoon/domain/RentRow.java,e\e\ee707c6b54296e6f6a7e18a70c524c68ce39cb13

@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config.security.auth;
+package rent.tycoon.config.security.auth;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -13,9 +13,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.filter.OncePerRequestFilter;
-import rent.tycoon.persistance.config.security.exception.InvalidAccessTokenException;
-import rent.tycoon.persistance.config.security.token.AccessToken;
-import rent.tycoon.persistance.config.security.token.AccessTokenDecoder;
+import rent.tycoon.config.security.exception.InvalidAccessTokenException;
+import rent.tycoon.config.security.token.AccessToken;
+import rent.tycoon.config.security.token.AccessTokenDecoder;
 
 import java.io.IOException;
 

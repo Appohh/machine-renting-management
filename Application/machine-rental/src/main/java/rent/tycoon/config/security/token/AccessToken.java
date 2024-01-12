@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config.security.token;
+package rent.tycoon.config.security.token;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package rent.tycoon.persistance.config.security.auth;
+package rent.tycoon.config.security.auth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.context.WebApplicationContext;
-import rent.tycoon.persistance.config.security.token.AccessToken;
+import rent.tycoon.config.security.token.AccessToken;
 
 @Configuration
 public class RequestAuthenticatedUserProvider {

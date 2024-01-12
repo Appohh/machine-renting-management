@@ -20,7 +20,6 @@ import java.util.List;
 public class RentJpaMapper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private long id;
     private long customerId;
     private String address;
@@ -30,8 +29,4 @@ public class RentJpaMapper {
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
-    @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RentRowJpaMapper> rentRow;
-
-
 }

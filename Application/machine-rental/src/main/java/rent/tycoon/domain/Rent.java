@@ -23,7 +23,4 @@ public class Rent {
     private BigDecimal total;
     private BigDecimal discount;
     private int paid;
-    private List<RentRow> rows;
-
-
 }
