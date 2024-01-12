@@ -32,6 +32,7 @@ public class RentConverterImpl implements IRentConverter{
                 .startDate(rentRow.getStartDate())
                 .endDate(rentRow.getEndDate())
                 .rentId(rentRow.getRentId())
+                .quantity(rentRow.getQuantity())
                 .build();
     }
 

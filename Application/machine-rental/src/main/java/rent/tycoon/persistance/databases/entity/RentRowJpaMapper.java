@@ -26,4 +26,5 @@ public class RentRowJpaMapper {
     private Date startDate;
     private Date endDate;
     private long rentId;
+    private Integer quantity;
 }

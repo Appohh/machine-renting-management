@@ -238,7 +238,8 @@
       <workItem from="1705050861022" duration="127000" />
       <workItem from="1705051047980" duration="1312000" />
       <workItem from="1705055214677" duration="1463000" />
-      <workItem from="1705067696641" duration="5484000" />
+      <workItem from="1705067696641" duration="5809000" />
+      <workItem from="1705082940088" duration="370000" />
     </task>
     <servers />
   </component>
@@ -255,26 +256,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/controller/RentController.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/controller/RentController.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/business/services/RentService.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

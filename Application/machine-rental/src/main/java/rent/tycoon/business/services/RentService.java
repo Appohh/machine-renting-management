@@ -52,7 +52,7 @@ public class RentService implements IRentService {
     }
 
     public AddRentRowResponseModel addRentRow(AddRentRowRequestModel requestModel) throws RentCustomException{
-        RentRow rentRow = new RentRow(0, requestModel.getProductId(), requestModel.getStartDate(), requestModel.getEndDate(), requestModel.getRentId());
+        RentRow rentRow = new RentRow(0, requestModel.getProductId(), requestModel.getStartDate(), requestModel.getEndDate(), requestModel.getRentId(), requestModel.getQuantity());
         try {
             long id = gateway.saveRentRow(rentRow);
             return new AddRentRowResponseModel(id);
