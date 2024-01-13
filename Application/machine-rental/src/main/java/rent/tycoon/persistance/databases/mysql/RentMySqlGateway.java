@@ -12,6 +12,7 @@ import rent.tycoon.persistance.databases.entity.RentRowJpaMapper;
 import rent.tycoon.persistance.repositories.IRentRepository;
 import rent.tycoon.persistance.repositories.IRentRowRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -44,4 +45,16 @@ public class RentMySqlGateway implements IRentRepo {
         Optional<RentJpaMapper> optionalPostJpaMapper = repository.findById(rentId);
         return converter.toSingleOptionalRent(optionalPostJpaMapper);
     }
+
+    @Override
+    public List<Rent> getAllRents(long customerId){
+        List<RentJpaMapper> rentJpaMappers = repository.findByCustomerId(customerId);
+        return converter.toListOfRents(rentJpaMappers);
+    }
+    @Override
+    public List<RentRow>getAllRentRows(long rentId){
+        List<RentRowJpaMapper> rentRowJpaMappers = rentRowRepository.findAllByRentId(rentId);
+        return converter.toListOfRentRows(rentRowJpaMappers);
+    }
+
 }

@@ -11,6 +11,8 @@ import rent.tycoon.business.model.request.rent.AddRentRowRequestModel;
 import rent.tycoon.business.model.request.rent.CreateRentRequestModel;
 import rent.tycoon.business.model.response.rent.AddRentRowResponseModel;
 import rent.tycoon.business.model.response.rent.CreateRentResponseModel;
+import rent.tycoon.business.model.response.rent.GetAllRentResponseModel;
+import rent.tycoon.business.model.response.rent.GetAllRentRowsResponseModel;
 
 
 @RestController
@@ -56,8 +58,7 @@ public class RentController {
             if (Boolean.TRUE.equals(rentService.userOwnsRent(userId, requestModel.getRentId()))){
                  AddRentRowResponseModel responseModel = rentService.addRentRow(requestModel);
                  return ResponseEntity.ok(responseModel);
-            }
-            else {
+            }else {
                 return ResponseEntity.status(HttpStatus.FORBIDDEN).body("User doesn't own this rent.");
             }
         } catch(Exception e){
@@ -66,10 +67,34 @@ public class RentController {
 
     }
 
-//    @GetMapping("{customer_id}")
-//    public GetAllRentResponseModel getAllRents(@PathVariable("customer_id") long customerId)  throws RentCustomException{
-//        return this.rentService2.getAllRents(customerId);
-//    }
+    @GetMapping()
+    public ResponseEntity<Object> getAllRents(@RequestHeader("Authorization") String authorizationHeader){
+        try {
+            String token = extractTokenFromAuthorizationHeader(authorizationHeader);
+            long userId = authService.extractUserIdFromToken(token);
+            GetAllRentResponseModel responseModel = rentService.getAllRents(userId);
+            return ResponseEntity.ok(responseModel);
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred during the retrieval of rents");
+        }
+    }
+
+    @GetMapping("/getRentRow/{rentId}")
+    public ResponseEntity<Object> getAllRentsRows(@RequestHeader("Authorization") String authorizationHeader, @PathVariable("rentId") long rentId){
+        try {
+            String token = extractTokenFromAuthorizationHeader(authorizationHeader);
+            long userId = authService.extractUserIdFromToken(token);
+            if (Boolean.TRUE.equals(rentService.userOwnsRent(userId, rentId))){
+                GetAllRentRowsResponseModel responseModel = rentService.getAllRentRows(rentId);
+                return ResponseEntity.ok(responseModel);
+            }else {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body("User doesn't own this rent.");
+            }
+
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred during the retrieval of rents");
+        }
+    }
 
 
     private String extractTokenFromAuthorizationHeader(String authorizationHeader) {

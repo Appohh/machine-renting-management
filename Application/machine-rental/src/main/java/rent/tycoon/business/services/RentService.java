@@ -10,6 +10,7 @@ import rent.tycoon.business.model.request.rent.CreateRentRequestModel;
 import rent.tycoon.business.model.response.rent.AddRentRowResponseModel;
 import rent.tycoon.business.model.response.rent.CreateRentResponseModel;
 import rent.tycoon.business.model.response.rent.GetAllRentResponseModel;
+import rent.tycoon.business.model.response.rent.GetAllRentRowsResponseModel;
 import rent.tycoon.domain.*;
 
 import java.lang.ref.ReferenceQueue;
@@ -52,7 +53,7 @@ public class RentService implements IRentService {
     }
 
     public AddRentRowResponseModel addRentRow(AddRentRowRequestModel requestModel) throws RentCustomException{
-        RentRow rentRow = new RentRow(0, requestModel.getProductId(), requestModel.getStartDate(), requestModel.getEndDate(), requestModel.getRentId(), requestModel.getQuantity());
+        RentRow rentRow = new RentRow(0, requestModel.getProductId(), requestModel.getStartDate(), requestModel.getEndDate(), requestModel.getRentId());
         try {
             long id = gateway.saveRentRow(rentRow);
             return new AddRentRowResponseModel(id);
@@ -63,18 +64,22 @@ public class RentService implements IRentService {
 
     }
 
-//    @Override
-//    public GetAllRentResponseModel getAllRents(long customerId) throws RentCustomException {
-//        List<RentProductWrapper> rentProductList = new ArrayList<>();
-//        List<Rent2> rents = repo.getRentsByCustomerId(customerId);
-//
-//        for (Rent2 rent : rents) {
-//            IProduct product = repo.getProductByRent(rent.getId());
-//
-//            RentProductWrapper rentProductWrapper = new RentProductWrapper(rent, product);
-//            rentProductList.add(rentProductWrapper);
-//        }
-//
-//        return new GetAllRentResponseModel(rentProductList);
-//    }
+    public GetAllRentResponseModel getAllRents(long customerId) throws RentCustomException{
+        try {
+            List<Rent> rents = gateway.getAllRents(customerId);
+            return new GetAllRentResponseModel(rents);
+        }catch(Exception e){
+            throw new RentCustomException("Something went wrong.");
+        }
+    }
+
+    public GetAllRentRowsResponseModel getAllRentRows(long rentId) throws RentCustomException{
+        try {
+            List<RentRow> rentRows = gateway.getAllRentRows(rentId);
+            return new GetAllRentRowsResponseModel(rentRows);
+        }catch(Exception e){
+            throw new RentCustomException("Something went wrong.");
+        }
+    }
+
 }

@@ -6,7 +6,9 @@ import rent.tycoon.domain.RentRow;
 import rent.tycoon.persistance.databases.entity.RentJpaMapper;
 import rent.tycoon.persistance.databases.entity.RentRowJpaMapper;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class RentConverterImpl implements IRentConverter{
@@ -32,7 +34,6 @@ public class RentConverterImpl implements IRentConverter{
                 .startDate(rentRow.getStartDate())
                 .endDate(rentRow.getEndDate())
                 .rentId(rentRow.getRentId())
-                .quantity(rentRow.getQuantity())
                 .build();
     }
 
@@ -49,5 +50,31 @@ public class RentConverterImpl implements IRentConverter{
                 .discount(jpaMapper.getDiscount())
                 .paid(jpaMapper.getPaid())
                 .build());
+    }
+    @Override
+    public List<Rent> toListOfRents(List<RentJpaMapper> rentJpaMappers){
+        return rentJpaMappers.stream()
+                .map(mapper -> new Rent(
+                        mapper.getId(),
+                        mapper.getCustomerId(),
+                        mapper.getAddress(),
+                        mapper.getCity(),
+                        mapper.getTimestamp(),
+                        mapper.getTotal(),
+                        mapper.getDiscount(),
+                        mapper.getPaid()))
+                .toList();
+    }
+
+    @Override
+    public List<RentRow> toListOfRentRows(List<RentRowJpaMapper> rentRowJpaMappers){
+        return rentRowJpaMappers.stream()
+                .map(mapper -> new RentRow(
+                        mapper.getId(),
+                        mapper.getProductId(),
+                        mapper.getStartDate(),
+                        mapper.getEndDate(),
+                        mapper.getRentId()))
+                .toList();
     }
 }

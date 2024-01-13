@@ -1,6 +1,7 @@
 package rent.tycoon.business.model.response.rent;
 
 import lombok.*;
+import rent.tycoon.domain.Rent;
 import rent.tycoon.domain.RentProductWrapper;
 
 import java.util.List;
@@ -11,5 +12,5 @@ import java.util.List;
 @Setter
 @Builder
 public class GetAllRentResponseModel {
-    private List<RentProductWrapper> rentProductList;
+    private List<Rent> rents;
 }

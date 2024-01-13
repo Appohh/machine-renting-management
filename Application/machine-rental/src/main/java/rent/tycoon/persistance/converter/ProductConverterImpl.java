@@ -97,8 +97,7 @@ public class ProductConverterImpl implements ProductConverter {
                         mapper.getPrice(),
                         FilesConverter.mapToFiles(mapper.getFiles()),
                         mapper.getMachineSpecificField(),
-                        mapper.getCategories().stream().map(CategoryJpaMapper::getId).collect(Collectors.toSet())
-                ))
+                        mapper.getCategories().stream().map(CategoryJpaMapper::getId).collect(Collectors.toSet())))
                 .collect(Collectors.toList());
     }
 }
