@@ -18,6 +18,5 @@ public class Customer {
     private String email;
     private int phone;
     private Date timeStamp;
-
     private String password;
 }

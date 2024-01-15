@@ -2,7 +2,6 @@ package rent.tycoon.business.model.response.rent;
 
 import lombok.*;
 import rent.tycoon.domain.Rent;
-import rent.tycoon.domain.RentProductWrapper;
 
 import java.util.List;
 

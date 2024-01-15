@@ -165,3 +165,7 @@ Fsrc/main/java/rent/tycoon/persistance/converter/RentConverterImpl.java,c\8\c83
 Qsrc/main/java/rent/tycoon/business/model/request/rent/AddRentRowRequestModel.java,7\6\769ba186fdaf1b498bc3c339334b665ddcd7fd18
 ƒ
 Ssrc/main/java/rent/tycoon/business/model/response/rent/GetAllRentResponseModel.java,8\f\8f121b9159997b7f3e357f61157cc5af2d595c75
+‡
+Wsrc/main/java/rent/tycoon/business/model/response/rent/GetAllRentRowsResponseModel.java,3\a\3ae6cc7bd10e6f8e0db2fc55a0e940a6afa0aba0
+^
+.src/main/java/rent/tycoon/domain/Customer.java,b\9\b91a4da7563c2175d735e6fac2e4db2d2ec14cd3

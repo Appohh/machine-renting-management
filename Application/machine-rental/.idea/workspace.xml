@@ -240,7 +240,12 @@
       <workItem from="1705055214677" duration="1463000" />
       <workItem from="1705067696641" duration="5809000" />
       <workItem from="1705082940088" duration="453000" />
-      <workItem from="1705143072297" duration="4232000" />
+      <workItem from="1705143072297" duration="12432000" />
+      <workItem from="1705173237159" duration="1813000" />
+      <workItem from="1705238578997" duration="3815000" />
+      <workItem from="1705251085872" duration="1215000" />
+      <workItem from="1705261905647" duration="1520000" />
+      <workItem from="1705308205647" duration="2770000" />
     </task>
     <servers />
   </component>
@@ -257,35 +262,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/controller/RentController.java</url>
-          <line>82</line>
-          <properties class="rent.tycoon.controller.RentController" method="getAllRentsRows">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/controller/RentController.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/persistance/databases/mysql/RentMySqlGateway.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/persistance/databases/mysql/RentMySqlGateway.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

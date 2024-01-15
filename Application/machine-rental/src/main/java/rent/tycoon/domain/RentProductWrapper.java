@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 
 public class RentProductWrapper {
-    private Rent rent;
+    private RentRow rentRow;
     private IProduct product;
 }

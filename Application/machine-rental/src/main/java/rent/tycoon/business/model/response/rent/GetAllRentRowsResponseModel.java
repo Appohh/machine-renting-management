@@ -3,7 +3,7 @@ package rent.tycoon.business.model.response.rent;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import rent.tycoon.domain.RentRow;
+import rent.tycoon.domain.RentProductWrapper;
 
 import java.util.List;
 
@@ -11,5 +11,5 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 public class GetAllRentRowsResponseModel {
-    private List<RentRow> rentRows;
+    private List<RentProductWrapper> rentWrapper;
 }

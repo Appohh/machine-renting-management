@@ -2,6 +2,7 @@ package rent.tycoon.business.services;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import rent.tycoon.business.interfaces.repo_interfaces.IProductRepo;
 import rent.tycoon.business.interfaces.service_interfaces.IRentService;
 import rent.tycoon.business.interfaces.repo_interfaces.IRentRepo;
 import rent.tycoon.business.exeption.RentCustomException;
@@ -23,6 +24,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class RentService implements IRentService {
     IRentRepo gateway;
+    IProductRepo gatewayProduct;
 
     @Override
     public CreateRentResponseModel create(CreateRentRequestModel requestModel) throws RentCustomException{
@@ -75,11 +77,32 @@ public class RentService implements IRentService {
 
     public GetAllRentRowsResponseModel getAllRentRows(long rentId) throws RentCustomException{
         try {
+            List<RentProductWrapper> rentProductList = new ArrayList<>();
             List<RentRow> rentRows = gateway.getAllRentRows(rentId);
-            return new GetAllRentRowsResponseModel(rentRows);
+            for(RentRow rentRow : rentRows){
+                IProduct product = gatewayProduct.getProductById(rentRow.getProductId());
+                RentProductWrapper rentWrapper = new RentProductWrapper(rentRow, product);
+                rentProductList.add(rentWrapper);
+            }
+            return new GetAllRentRowsResponseModel(rentProductList);
         }catch(Exception e){
             throw new RentCustomException("Something went wrong.");
         }
     }
+
+    //    @Override
+//    public GetAllRentResponseModel getAllRents(long customerId) throws RentCustomException {
+//        List<RentProductWrapper> rentProductList = new ArrayList<>();
+//        List<Rent2> rents = repo.getRentsByCustomerId(customerId);
+//
+//        for (Rent2 rent : rents) {
+//            IProduct product = repo.getProductByRent(rent.getId());
+//
+//            RentProductWrapper rentProductWrapper = new RentProductWrapper(rent, product);
+//            rentProductList.add(rentProductWrapper);
+//        }
+//
+//        return new GetAllRentResponseModel(rentProductList);
+//    }
 
 }
