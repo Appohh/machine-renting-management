@@ -40,3 +40,12 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Ignore IntelliJ IDEA files
+.idea/
+
+# Ignore workspace.xml file
+Application/machine-rental/.idea/workspace.xml
+
+# Ignore sonarlint files
+Application/machine-rental/.idea/sonarlint/
