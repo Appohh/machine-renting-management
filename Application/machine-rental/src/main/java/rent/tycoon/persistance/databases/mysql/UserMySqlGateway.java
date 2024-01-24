@@ -41,4 +41,9 @@ public class UserMySqlGateway implements IUserRepo {
             throw new RuntimeException("User not found with ID: " + id);
         }
     }
+
+    public Customer getUserById(long userId){
+        UserJpaMapper user = userRepository.findUserById(userId);
+        return CustomerConverter.CustomerConvert(user);
+    }
 }

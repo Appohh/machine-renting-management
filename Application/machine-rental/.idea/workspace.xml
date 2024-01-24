@@ -92,11 +92,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="rent.tycoon.business.services.discountrelated" />
+      <recent name="rent.tycoon.domain" />
+      <recent name="rent.tycoon.business.interfaces.service_interfaces" />
       <recent name="rent.tycoon.business.model.response.rent" />
       <recent name="rent.tycoon.business.model.response" />
-      <recent name="rent.tycoon.business.interfaces.service_interfaces" />
-      <recent name="rent.tycoon.business.services" />
-      <recent name="rent.tycoon.business.model.request" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -245,7 +245,14 @@
       <workItem from="1705238578997" duration="3815000" />
       <workItem from="1705251085872" duration="1215000" />
       <workItem from="1705261905647" duration="1520000" />
-      <workItem from="1705308205647" duration="2770000" />
+      <workItem from="1705308205647" duration="3618000" />
+      <workItem from="1705425127551" duration="336000" />
+      <workItem from="1705478417746" duration="54000" />
+      <workItem from="1705496191781" duration="620000" />
+      <workItem from="1705908661910" duration="5549000" />
+      <workItem from="1705919588323" duration="3377000" />
+      <workItem from="1705939268620" duration="1194000" />
+      <workItem from="1706084958662" duration="3177000" />
     </task>
     <servers />
   </component>
@@ -262,5 +269,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/controller/DiscountController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/persistance/databases/mysql/DiscountMySqlGateway.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/rent/tycoon/persistance/databases/mysql/DiscountMySqlGateway.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
